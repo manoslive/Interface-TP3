@@ -128,5 +128,38 @@ namespace Compact_Agenda
             Properties.Settings.Default.positionEvents = this.Location;
             Properties.Settings.Default.Save();
         }
+
+        private void flashButton1_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+        }
+
+        private void BTN_Ok_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BTN_Cancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FBTN_Accepter_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = System.Windows.Forms.DialogResult.OK;
+        }
+
+        private void NUD_DebutHeure_ValueChanged(object sender, EventArgs e)
+        {
+            if (!blockUpdate)
+            {
+                Event.Starting = new DateTime(DTP_Date.Value.Year,
+                                                 DTP_Date.Value.Month,
+                                                 DTP_Date.Value.Day,
+                                                 Convert.ToInt32(NUD_DebutHeure.Value),
+                                                 Convert.ToInt32(NUD_DebutMinute.Value),
+                                                 0);
+            }
+        }
     }
 }

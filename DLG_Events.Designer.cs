@@ -38,23 +38,25 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.DTP_Ending = new System.Windows.Forms.DateTimePicker();
-            this.BTN_Ok = new System.Windows.Forms.Button();
-            this.BTN_Cancel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.flashButton1 = new FlashButton.FlashButton();
-            this.flashButton2 = new FlashButton.FlashButton();
+            this.FBTN_Close = new FlashButton.FlashButton();
+            this.FBTN_Accepter = new FlashButton.FlashButton();
+            this.NUD_DebutHeure = new System.Windows.Forms.NumericUpDown();
+            this.NUD_DebutMinute = new System.Windows.Forms.NumericUpDown();
+            this.NUD_FinHeure = new System.Windows.Forms.NumericUpDown();
+            this.NUD_FinMinute = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -62,6 +64,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_DebutHeure)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_DebutMinute)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_FinHeure)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_FinMinute)).BeginInit();
             this.SuspendLayout();
             // 
             // TBX_Title
@@ -164,29 +170,6 @@
             this.DTP_Ending.TabIndex = 45;
             this.DTP_Ending.ValueChanged += new System.EventHandler(this.DTP_Ending_ValueChanged);
             // 
-            // BTN_Ok
-            // 
-            this.BTN_Ok.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BTN_Ok.Location = new System.Drawing.Point(453, 411);
-            this.BTN_Ok.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.BTN_Ok.Name = "BTN_Ok";
-            this.BTN_Ok.Size = new System.Drawing.Size(112, 35);
-            this.BTN_Ok.TabIndex = 6;
-            this.BTN_Ok.Text = "Ok";
-            this.BTN_Ok.UseVisualStyleBackColor = true;
-            // 
-            // BTN_Cancel
-            // 
-            this.BTN_Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BTN_Cancel.Location = new System.Drawing.Point(331, 411);
-            this.BTN_Cancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.BTN_Cancel.Name = "BTN_Cancel";
-            this.BTN_Cancel.Size = new System.Drawing.Size(112, 35);
-            this.BTN_Cancel.TabIndex = 5;
-            this.BTN_Cancel.TabStop = false;
-            this.BTN_Cancel.Text = "Annuler";
-            this.BTN_Cancel.UseVisualStyleBackColor = true;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.radioButton6);
@@ -201,6 +184,72 @@
             this.groupBox1.TabIndex = 47;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Catégorie";
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(11, 254);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(73, 24);
+            this.radioButton6.TabIndex = 0;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "Autre";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(11, 211);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(71, 24);
+            this.radioButton5.TabIndex = 0;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "Loisir";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(11, 168);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(103, 24);
+            this.radioButton4.TabIndex = 0;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Important";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(11, 125);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(77, 24);
+            this.radioButton3.TabIndex = 0;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Santé";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(11, 82);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(79, 24);
+            this.radioButton2.TabIndex = 0;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Travail";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(11, 39);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(91, 24);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Général";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -250,107 +299,76 @@
             this.pictureBox6.TabIndex = 48;
             this.pictureBox6.TabStop = false;
             // 
-            // radioButton1
+            // FBTN_Close
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(11, 39);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(91, 24);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Général";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.FBTN_Close.BackgroundImage = global::Compact_Agenda.Properties.Resources.ICON_Annuler_Neutral;
+            this.FBTN_Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FBTN_Close.ImageClick = global::Compact_Agenda.Properties.Resources.ICON_Annuler_Click;
+            this.FBTN_Close.ImageDisable = global::Compact_Agenda.Properties.Resources.ICON_Annuler_Disable;
+            this.FBTN_Close.ImageNeutral = global::Compact_Agenda.Properties.Resources.ICON_Annuler_Neutral;
+            this.FBTN_Close.ImageOver = global::Compact_Agenda.Properties.Resources.ICON_Annuler_Over;
+            this.FBTN_Close.Location = new System.Drawing.Point(464, 406);
+            this.FBTN_Close.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FBTN_Close.Name = "FBTN_Close";
+            this.FBTN_Close.Size = new System.Drawing.Size(40, 40);
+            this.FBTN_Close.TabIndex = 49;
+            this.FBTN_Close.Click += new System.EventHandler(this.flashButton1_Click);
             // 
-            // radioButton2
+            // FBTN_Accepter
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(11, 82);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(79, 24);
-            this.radioButton2.TabIndex = 0;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Travail";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.FBTN_Accepter.BackgroundImage = global::Compact_Agenda.Properties.Resources.ICON_Accepter_Neutral;
+            this.FBTN_Accepter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FBTN_Accepter.ImageClick = global::Compact_Agenda.Properties.Resources.ICON_Accepter_Click;
+            this.FBTN_Accepter.ImageDisable = global::Compact_Agenda.Properties.Resources.ICON_Accepter_Disable;
+            this.FBTN_Accepter.ImageNeutral = global::Compact_Agenda.Properties.Resources.ICON_Accepter_Neutral;
+            this.FBTN_Accepter.ImageOver = global::Compact_Agenda.Properties.Resources.ICON_Accepter_Over;
+            this.FBTN_Accepter.Location = new System.Drawing.Point(526, 406);
+            this.FBTN_Accepter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FBTN_Accepter.Name = "FBTN_Accepter";
+            this.FBTN_Accepter.Size = new System.Drawing.Size(40, 40);
+            this.FBTN_Accepter.TabIndex = 49;
+            this.FBTN_Accepter.Click += new System.EventHandler(this.FBTN_Accepter_Click);
             // 
-            // radioButton3
+            // NUD_DebutHeure
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(11, 125);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(77, 24);
-            this.radioButton3.TabIndex = 0;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Santé";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.NUD_DebutHeure.Location = new System.Drawing.Point(281, 373);
+            this.NUD_DebutHeure.Name = "NUD_DebutHeure";
+            this.NUD_DebutHeure.Size = new System.Drawing.Size(37, 26);
+            this.NUD_DebutHeure.TabIndex = 50;
+            this.NUD_DebutHeure.ValueChanged += new System.EventHandler(this.NUD_DebutHeure_ValueChanged);
             // 
-            // radioButton4
+            // NUD_DebutMinute
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(11, 168);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(103, 24);
-            this.radioButton4.TabIndex = 0;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Important";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.NUD_DebutMinute.Location = new System.Drawing.Point(341, 373);
+            this.NUD_DebutMinute.Name = "NUD_DebutMinute";
+            this.NUD_DebutMinute.Size = new System.Drawing.Size(37, 26);
+            this.NUD_DebutMinute.TabIndex = 50;
             // 
-            // radioButton5
+            // NUD_FinHeure
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(11, 211);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(71, 24);
-            this.radioButton5.TabIndex = 0;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Loisir";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.NUD_FinHeure.Location = new System.Drawing.Point(281, 410);
+            this.NUD_FinHeure.Name = "NUD_FinHeure";
+            this.NUD_FinHeure.Size = new System.Drawing.Size(37, 26);
+            this.NUD_FinHeure.TabIndex = 50;
             // 
-            // radioButton6
+            // NUD_FinMinute
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(11, 254);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(73, 24);
-            this.radioButton6.TabIndex = 0;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "Autre";
-            this.radioButton6.UseVisualStyleBackColor = true;
-            // 
-            // flashButton1
-            // 
-            this.flashButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.flashButton1.ImageClick = global::Compact_Agenda.Properties.Resources.ICON_Trier_Descendant_Over;
-            this.flashButton1.ImageDisable = null;
-            this.flashButton1.ImageNeutral = null;
-            this.flashButton1.ImageOver = null;
-            this.flashButton1.Location = new System.Drawing.Point(527, 356);
-            this.flashButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.flashButton1.Name = "flashButton1";
-            this.flashButton1.Size = new System.Drawing.Size(40, 40);
-            this.flashButton1.TabIndex = 49;
-            // 
-            // flashButton2
-            // 
-            this.flashButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.flashButton2.ImageClick = null;
-            this.flashButton2.ImageDisable = null;
-            this.flashButton2.ImageNeutral = null;
-            this.flashButton2.ImageOver = null;
-            this.flashButton2.Location = new System.Drawing.Point(467, 356);
-            this.flashButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.flashButton2.Name = "flashButton2";
-            this.flashButton2.Size = new System.Drawing.Size(40, 40);
-            this.flashButton2.TabIndex = 49;
+            this.NUD_FinMinute.Location = new System.Drawing.Point(341, 410);
+            this.NUD_FinMinute.Name = "NUD_FinMinute";
+            this.NUD_FinMinute.Size = new System.Drawing.Size(37, 26);
+            this.NUD_FinMinute.TabIndex = 50;
             // 
             // DLG_Events
             // 
-            this.AcceptButton = this.BTN_Ok;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.BTN_Cancel;
             this.ClientSize = new System.Drawing.Size(578, 460);
-            this.Controls.Add(this.flashButton2);
-            this.Controls.Add(this.flashButton1);
+            this.Controls.Add(this.NUD_FinMinute);
+            this.Controls.Add(this.NUD_DebutMinute);
+            this.Controls.Add(this.NUD_FinHeure);
+            this.Controls.Add(this.NUD_DebutHeure);
+            this.Controls.Add(this.FBTN_Accepter);
+            this.Controls.Add(this.FBTN_Close);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
@@ -358,8 +376,6 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.BTN_Cancel);
-            this.Controls.Add(this.BTN_Ok);
             this.Controls.Add(this.DTP_Ending);
             this.Controls.Add(this.DTP_Starting);
             this.Controls.Add(this.DTP_Date);
@@ -385,6 +401,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_DebutHeure)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_DebutMinute)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_FinHeure)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_FinMinute)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -402,8 +422,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker DTP_Ending;
-        private System.Windows.Forms.Button BTN_Ok;
-        private System.Windows.Forms.Button BTN_Cancel;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton6;
         private System.Windows.Forms.RadioButton radioButton5;
@@ -417,7 +435,11 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private FlashButton.FlashButton flashButton1;
-        private FlashButton.FlashButton flashButton2;
+        private FlashButton.FlashButton FBTN_Close;
+        private FlashButton.FlashButton FBTN_Accepter;
+        private System.Windows.Forms.NumericUpDown NUD_DebutHeure;
+        private System.Windows.Forms.NumericUpDown NUD_DebutMinute;
+        private System.Windows.Forms.NumericUpDown NUD_FinHeure;
+        private System.Windows.Forms.NumericUpDown NUD_FinMinute;
     }
 }
