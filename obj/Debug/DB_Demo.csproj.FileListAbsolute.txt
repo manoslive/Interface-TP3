@@ -46,3 +46,15 @@ C:\Users\Emmanuel\Google Drive\Dev C sharp\Interface-TP3\obj\Debug\Compact_Agend
 C:\Users\Emmanuel\Google Drive\Dev C sharp\Interface-TP3\obj\Debug\Compact_Agenda.Form_WeekView.resources
 C:\Users\Emmanuel\Google Drive\Dev C sharp\Interface-TP3\obj\Debug\Compact_Agenda.Properties.Resources.resources
 C:\Users\Emmanuel\Google Drive\Dev C sharp\Interface-TP3\obj\Debug\DB_Demo.csproj.GenerateResource.Cache
+C:\Users\Shaun\Documents\Prog\Dév. Interface\Interface-TP3\bin\Debug\DB_Demo.exe.config
+C:\Users\Shaun\Documents\Prog\Dév. Interface\Interface-TP3\obj\Debug\DB_Demo.exe
+C:\Users\Shaun\Documents\Prog\Dév. Interface\Interface-TP3\obj\Debug\DB_Demo.pdb
+C:\Users\Shaun\Documents\Prog\Dév. Interface\Interface-TP3\bin\Debug\DB_Demo.exe
+C:\Users\Shaun\Documents\Prog\Dév. Interface\Interface-TP3\bin\Debug\DB_Demo.pdb
+C:\Users\Shaun\Documents\Prog\Dév. Interface\Interface-TP3\bin\Debug\FlashButton.dll
+C:\Users\Shaun\Documents\Prog\Dév. Interface\Interface-TP3\bin\Debug\FlashButton.pdb
+C:\Users\Shaun\Documents\Prog\Dév. Interface\Interface-TP3\obj\Debug\DB_Demo.csprojResolveAssemblyReference.cache
+C:\Users\Shaun\Documents\Prog\Dév. Interface\Interface-TP3\obj\Debug\Compact_Agenda.DLG_Events.resources
+C:\Users\Shaun\Documents\Prog\Dév. Interface\Interface-TP3\obj\Debug\Compact_Agenda.Form_WeekView.resources
+C:\Users\Shaun\Documents\Prog\Dév. Interface\Interface-TP3\obj\Debug\Compact_Agenda.Properties.Resources.resources
+C:\Users\Shaun\Documents\Prog\Dév. Interface\Interface-TP3\obj\Debug\DB_Demo.csproj.GenerateResource.Cache
