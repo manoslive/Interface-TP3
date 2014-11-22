@@ -454,7 +454,7 @@ namespace Compact_Agenda
             Increment_Week();
         }
 
-        private void Delete(bool provenanceCM)
+        private void DeleteModif(bool provenanceCM)
         {
             DLG_Events dlg = new DLG_Events();
             dlg.Event = evenement.TargetEvent;
@@ -484,7 +484,7 @@ namespace Compact_Agenda
             if ((evenement.TargetEvent != null) && (evenement.TargetPart == TargetPart.Inside) && (e.Button == MouseButtons.Left))
             {
                 bool provientCM = false;
-                Delete(provientCM);
+                DeleteModif(provientCM);
             }
         }
         private void PN_Content_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
@@ -581,13 +581,13 @@ namespace Compact_Agenda
         private void CMI_Modifier_Click(object sender, EventArgs e)
         {
             bool provientCM = false;
-            Delete(provientCM);
+            DeleteModif(provientCM);
         }
 
         private void CMI_Effacer_Click(object sender, EventArgs e)
         {
             bool provenanceCM = true;
-            Delete(provenanceCM);
+            DeleteModif(provenanceCM);
         }
 
         private void CMI_Reporter_Click(object sender, EventArgs e)

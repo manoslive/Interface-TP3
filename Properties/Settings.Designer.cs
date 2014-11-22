@@ -223,5 +223,17 @@ namespace Compact_Agenda.Properties {
                 this["colorAutre"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("LightBlue")]
+        public global::System.Drawing.Color colorEvent {
+            get {
+                return ((global::System.Drawing.Color)(this["colorEvent"]));
+            }
+            set {
+                this["colorEvent"] = value;
+            }
+        }
     }
 }

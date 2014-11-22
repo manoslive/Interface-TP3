@@ -49,12 +49,11 @@ namespace Compact_Agenda
                 TBX_Description.Text = Event.Description;
                 blockUpdate = true;
                 DTP_Date.Value = Klone(Event.Starting);
-                DTP_Starting.Value = Klone(Event.Starting);
-                DTP_Ending.Value = Klone(Event.Ending);
-                NUD_DebutHeure.Value = DTP_Starting.Value.Hour;
-                NUD_DebutMinute.Value = DTP_Starting.Value.Minute;
-                NUD_FinHeure.Value = DTP_Ending.Value.Hour;
-                NUD_FinMinute.Value = DTP_Ending.Value.Minute;
+                NUD_DebutHeure.Value = Convert.ToInt32((Klone(Event.Starting).Hour));
+                NUD_DebutMinute.Value = Convert.ToInt32((Klone(Event.Starting).Minute));
+                NUD_FinHeure.Value = Convert.ToInt32((Klone(Event.Ending).Hour));
+                NUD_FinMinute.Value = Convert.ToInt32((Klone(Event.Ending).Minute));
+
 
                 blockUpdate = false;
             }
@@ -296,7 +295,7 @@ namespace Compact_Agenda
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            Event.
+            Event.eventColor = Properties.Settings.Default.colorGeneral;
         }
     }
 }

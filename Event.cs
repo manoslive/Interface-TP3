@@ -10,6 +10,7 @@ namespace Compact_Agenda
     public class Event
     {
         public string Id { get; set; }
+        public Color eventColor = Color.LightBlue;
         public string Title { get; set; }
         public string Description { get; set; }
         private DateTime _start;
@@ -116,7 +117,7 @@ namespace Compact_Agenda
         }
         public void Draw(Graphics DC)
         {
-            DC.FillRectangle(new SolidBrush(Color.LightBlue), GetBorder());
+            DC.FillRectangle(new SolidBrush(eventColor), GetBorder());
             DC.DrawRectangle(new Pen(Color.Black, 1), GetBorder());
             string time = TimeToString(Starting) + "-" + TimeToString(Ending);
 

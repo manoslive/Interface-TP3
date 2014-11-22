@@ -53,5 +53,8 @@
     <Setting Name="colorAutre" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">Beige</Value>
     </Setting>
+    <Setting Name="colorEvent" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">LightBlue</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
