@@ -24,6 +24,12 @@ namespace Compact_Agenda
         private void DLG_Events_Load(object sender, EventArgs e)
         {
             this.Location = Properties.Settings.Default.positionEvents;
+            PB_General.BackColor = Properties.Settings.Default.colorGeneral;
+            PB_Travail.BackColor = Properties.Settings.Default.colorTravail;
+            PB_Sante.BackColor = Properties.Settings.Default.colorSante;
+            PB_Important.BackColor = Properties.Settings.Default.colorImportant;
+            PB_Loisir.BackColor = Properties.Settings.Default.colorLoisir;
+            PB_Autre.BackColor = Properties.Settings.Default.colorAutre;
             delete = false;
             EventToDLG();
             if(deleteCM)
@@ -45,6 +51,11 @@ namespace Compact_Agenda
                 DTP_Date.Value = Klone(Event.Starting);
                 DTP_Starting.Value = Klone(Event.Starting);
                 DTP_Ending.Value = Klone(Event.Ending);
+                NUD_DebutHeure.Value = DTP_Starting.Value.Hour;
+                NUD_DebutMinute.Value = DTP_Starting.Value.Minute;
+                NUD_FinHeure.Value = DTP_Ending.Value.Hour;
+                NUD_FinMinute.Value = DTP_Ending.Value.Minute;
+
                 blockUpdate = false;
             }
             else
@@ -147,6 +158,7 @@ namespace Compact_Agenda
         private void FBTN_Accepter_Click(object sender, EventArgs e)
         {
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.Close();
         }
 
         private void NUD_DebutHeure_ValueChanged(object sender, EventArgs e)
@@ -160,6 +172,52 @@ namespace Compact_Agenda
                                                  Convert.ToInt32(NUD_DebutMinute.Value),
                                                  0);
             }
+        }
+
+        private void NUD_DebutMinute_ValueChanged(object sender, EventArgs e)
+        {
+            if (!blockUpdate)
+            {
+                Event.Starting = new DateTime(DTP_Date.Value.Year,
+                                                 DTP_Date.Value.Month,
+                                                 DTP_Date.Value.Day,
+                                                 Convert.ToInt32(NUD_DebutHeure.Value),
+                                                 Convert.ToInt32(NUD_DebutMinute.Value),
+                                                 0);
+            }
+        }
+
+        private void NUD_FinHeure_ValueChanged(object sender, EventArgs e)
+        {
+            if (!blockUpdate)
+            {
+                Event.Ending = new DateTime(DTP_Date.Value.Year,
+                                                 DTP_Date.Value.Month,
+                                                 DTP_Date.Value.Day,
+                                                 Convert.ToInt32(NUD_FinHeure.Value),
+                                                 Convert.ToInt32(NUD_FinMinute.Value),
+                                                 0);
+            }
+        }
+
+        private void NUD_FinMinute_ValueChanged(object sender, EventArgs e)
+        {
+            if (!blockUpdate)
+            {
+                Event.Ending = new DateTime(DTP_Date.Value.Year,
+                                                 DTP_Date.Value.Month,
+                                                 DTP_Date.Value.Day,
+                                                 Convert.ToInt32(NUD_FinHeure.Value),
+                                                 Convert.ToInt32(NUD_FinMinute.Value),
+                                                 0);
+            }
+        }
+
+        private void PB_General_MouseHover(object sender, EventArgs e)
+        {
+            int Pb = 0;
+            Pb = this.BackColor.ToArgb();
+            MessageBox.Show(Pb.ToString());
         }
     }
 }

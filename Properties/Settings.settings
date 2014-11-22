@@ -12,7 +12,7 @@
       <Value Profile="(Default)">Microsoft Sans Serif, 8.25pt</Value>
     </Setting>
     <Setting Name="colorFontEvenement" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">White</Value>
     </Setting>
     <Setting Name="fontEvenementBold" Type="System.Drawing.Font" Scope="User">
       <Value Profile="(Default)" />
@@ -34,6 +34,24 @@
     </Setting>
     <Setting Name="tailleWeekView" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">0, 0</Value>
+    </Setting>
+    <Setting Name="colorGeneral" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+    <Setting Name="colorTravail" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">LightGray</Value>
+    </Setting>
+    <Setting Name="colorSante" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">LightGreen</Value>
+    </Setting>
+    <Setting Name="colorImportant" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">LightPink</Value>
+    </Setting>
+    <Setting Name="colorLoisir" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Orange</Value>
+    </Setting>
+    <Setting Name="colorAutre" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Beige</Value>
     </Setting>
   </Settings>
 </SettingsFile>

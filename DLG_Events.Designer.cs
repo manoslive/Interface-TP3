@@ -45,25 +45,27 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.PB_General = new System.Windows.Forms.PictureBox();
+            this.PB_Travail = new System.Windows.Forms.PictureBox();
+            this.PB_Sante = new System.Windows.Forms.PictureBox();
+            this.PB_Important = new System.Windows.Forms.PictureBox();
+            this.PB_Loisir = new System.Windows.Forms.PictureBox();
+            this.PB_Autre = new System.Windows.Forms.PictureBox();
             this.FBTN_Close = new FlashButton.FlashButton();
             this.FBTN_Accepter = new FlashButton.FlashButton();
             this.NUD_DebutHeure = new System.Windows.Forms.NumericUpDown();
             this.NUD_DebutMinute = new System.Windows.Forms.NumericUpDown();
             this.NUD_FinHeure = new System.Windows.Forms.NumericUpDown();
             this.NUD_FinMinute = new System.Windows.Forms.NumericUpDown();
+            this.LB_2PointsDebut = new System.Windows.Forms.Label();
+            this.LB_2PointsFin = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_General)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Travail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Sante)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Important)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Loisir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Autre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_DebutHeure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_DebutMinute)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_FinHeure)).BeginInit();
@@ -133,11 +135,12 @@
             // DTP_Starting
             // 
             this.DTP_Starting.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.DTP_Starting.Location = new System.Drawing.Point(105, 370);
+            this.DTP_Starting.Location = new System.Drawing.Point(445, 326);
             this.DTP_Starting.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DTP_Starting.Name = "DTP_Starting";
             this.DTP_Starting.Size = new System.Drawing.Size(120, 26);
             this.DTP_Starting.TabIndex = 4;
+            this.DTP_Starting.Visible = false;
             this.DTP_Starting.ValueChanged += new System.EventHandler(this.DTP_Starting_ValueChanged);
             // 
             // label4
@@ -163,11 +166,12 @@
             // DTP_Ending
             // 
             this.DTP_Ending.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.DTP_Ending.Location = new System.Drawing.Point(105, 410);
+            this.DTP_Ending.Location = new System.Drawing.Point(445, 366);
             this.DTP_Ending.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DTP_Ending.Name = "DTP_Ending";
             this.DTP_Ending.Size = new System.Drawing.Size(120, 26);
             this.DTP_Ending.TabIndex = 45;
+            this.DTP_Ending.Visible = false;
             this.DTP_Ending.ValueChanged += new System.EventHandler(this.DTP_Ending_ValueChanged);
             // 
             // groupBox1
@@ -251,53 +255,60 @@
             this.radioButton1.Text = "Général";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // PB_General
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(497, 57);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(59, 28);
-            this.pictureBox1.TabIndex = 48;
-            this.pictureBox1.TabStop = false;
+            this.PB_General.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PB_General.Location = new System.Drawing.Point(497, 57);
+            this.PB_General.Name = "PB_General";
+            this.PB_General.Size = new System.Drawing.Size(59, 28);
+            this.PB_General.TabIndex = 48;
+            this.PB_General.TabStop = false;
+            this.PB_General.MouseHover += new System.EventHandler(this.PB_General_MouseHover);
             // 
-            // pictureBox2
+            // PB_Travail
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(497, 100);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(59, 28);
-            this.pictureBox2.TabIndex = 48;
-            this.pictureBox2.TabStop = false;
+            this.PB_Travail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PB_Travail.Location = new System.Drawing.Point(497, 100);
+            this.PB_Travail.Name = "PB_Travail";
+            this.PB_Travail.Size = new System.Drawing.Size(59, 28);
+            this.PB_Travail.TabIndex = 48;
+            this.PB_Travail.TabStop = false;
             // 
-            // pictureBox3
+            // PB_Sante
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(497, 143);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(59, 28);
-            this.pictureBox3.TabIndex = 48;
-            this.pictureBox3.TabStop = false;
+            this.PB_Sante.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PB_Sante.Location = new System.Drawing.Point(497, 143);
+            this.PB_Sante.Name = "PB_Sante";
+            this.PB_Sante.Size = new System.Drawing.Size(59, 28);
+            this.PB_Sante.TabIndex = 48;
+            this.PB_Sante.TabStop = false;
             // 
-            // pictureBox4
+            // PB_Important
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(497, 186);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(59, 28);
-            this.pictureBox4.TabIndex = 48;
-            this.pictureBox4.TabStop = false;
+            this.PB_Important.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PB_Important.Location = new System.Drawing.Point(497, 186);
+            this.PB_Important.Name = "PB_Important";
+            this.PB_Important.Size = new System.Drawing.Size(59, 28);
+            this.PB_Important.TabIndex = 48;
+            this.PB_Important.TabStop = false;
             // 
-            // pictureBox5
+            // PB_Loisir
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(497, 229);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(59, 28);
-            this.pictureBox5.TabIndex = 48;
-            this.pictureBox5.TabStop = false;
+            this.PB_Loisir.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PB_Loisir.Location = new System.Drawing.Point(497, 229);
+            this.PB_Loisir.Name = "PB_Loisir";
+            this.PB_Loisir.Size = new System.Drawing.Size(59, 28);
+            this.PB_Loisir.TabIndex = 48;
+            this.PB_Loisir.TabStop = false;
             // 
-            // pictureBox6
+            // PB_Autre
             // 
-            this.pictureBox6.Location = new System.Drawing.Point(497, 272);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(59, 28);
-            this.pictureBox6.TabIndex = 48;
-            this.pictureBox6.TabStop = false;
+            this.PB_Autre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PB_Autre.Location = new System.Drawing.Point(497, 272);
+            this.PB_Autre.Name = "PB_Autre";
+            this.PB_Autre.Size = new System.Drawing.Size(59, 28);
+            this.PB_Autre.TabIndex = 48;
+            this.PB_Autre.TabStop = false;
             // 
             // FBTN_Close
             // 
@@ -331,50 +342,75 @@
             // 
             // NUD_DebutHeure
             // 
-            this.NUD_DebutHeure.Location = new System.Drawing.Point(281, 373);
+            this.NUD_DebutHeure.Location = new System.Drawing.Point(104, 373);
             this.NUD_DebutHeure.Name = "NUD_DebutHeure";
-            this.NUD_DebutHeure.Size = new System.Drawing.Size(37, 26);
+            this.NUD_DebutHeure.Size = new System.Drawing.Size(59, 26);
             this.NUD_DebutHeure.TabIndex = 50;
             this.NUD_DebutHeure.ValueChanged += new System.EventHandler(this.NUD_DebutHeure_ValueChanged);
             // 
             // NUD_DebutMinute
             // 
-            this.NUD_DebutMinute.Location = new System.Drawing.Point(341, 373);
+            this.NUD_DebutMinute.Location = new System.Drawing.Point(200, 373);
             this.NUD_DebutMinute.Name = "NUD_DebutMinute";
-            this.NUD_DebutMinute.Size = new System.Drawing.Size(37, 26);
+            this.NUD_DebutMinute.Size = new System.Drawing.Size(59, 26);
             this.NUD_DebutMinute.TabIndex = 50;
+            this.NUD_DebutMinute.ValueChanged += new System.EventHandler(this.NUD_DebutMinute_ValueChanged);
             // 
             // NUD_FinHeure
             // 
-            this.NUD_FinHeure.Location = new System.Drawing.Point(281, 410);
+            this.NUD_FinHeure.Location = new System.Drawing.Point(105, 413);
             this.NUD_FinHeure.Name = "NUD_FinHeure";
-            this.NUD_FinHeure.Size = new System.Drawing.Size(37, 26);
+            this.NUD_FinHeure.Size = new System.Drawing.Size(59, 26);
             this.NUD_FinHeure.TabIndex = 50;
+            this.NUD_FinHeure.ValueChanged += new System.EventHandler(this.NUD_FinHeure_ValueChanged);
             // 
             // NUD_FinMinute
             // 
-            this.NUD_FinMinute.Location = new System.Drawing.Point(341, 410);
+            this.NUD_FinMinute.Location = new System.Drawing.Point(200, 413);
             this.NUD_FinMinute.Name = "NUD_FinMinute";
-            this.NUD_FinMinute.Size = new System.Drawing.Size(37, 26);
+            this.NUD_FinMinute.Size = new System.Drawing.Size(59, 26);
             this.NUD_FinMinute.TabIndex = 50;
+            this.NUD_FinMinute.ValueChanged += new System.EventHandler(this.NUD_FinMinute_ValueChanged);
+            // 
+            // LB_2PointsDebut
+            // 
+            this.LB_2PointsDebut.AutoSize = true;
+            this.LB_2PointsDebut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_2PointsDebut.Location = new System.Drawing.Point(169, 367);
+            this.LB_2PointsDebut.Name = "LB_2PointsDebut";
+            this.LB_2PointsDebut.Size = new System.Drawing.Size(24, 32);
+            this.LB_2PointsDebut.TabIndex = 51;
+            this.LB_2PointsDebut.Text = ":";
+            // 
+            // LB_2PointsFin
+            // 
+            this.LB_2PointsFin.AutoSize = true;
+            this.LB_2PointsFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_2PointsFin.Location = new System.Drawing.Point(169, 407);
+            this.LB_2PointsFin.Name = "LB_2PointsFin";
+            this.LB_2PointsFin.Size = new System.Drawing.Size(24, 32);
+            this.LB_2PointsFin.TabIndex = 51;
+            this.LB_2PointsFin.Text = ":";
             // 
             // DLG_Events
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 460);
+            this.Controls.Add(this.LB_2PointsFin);
+            this.Controls.Add(this.LB_2PointsDebut);
             this.Controls.Add(this.NUD_FinMinute);
             this.Controls.Add(this.NUD_DebutMinute);
             this.Controls.Add(this.NUD_FinHeure);
             this.Controls.Add(this.NUD_DebutHeure);
             this.Controls.Add(this.FBTN_Accepter);
             this.Controls.Add(this.FBTN_Close);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.PB_Autre);
+            this.Controls.Add(this.PB_Loisir);
+            this.Controls.Add(this.PB_Important);
+            this.Controls.Add(this.PB_Sante);
+            this.Controls.Add(this.PB_Travail);
+            this.Controls.Add(this.PB_General);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.DTP_Ending);
             this.Controls.Add(this.DTP_Starting);
@@ -395,12 +431,12 @@
             this.Load += new System.EventHandler(this.DLG_Events_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_General)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Travail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Sante)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Important)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Loisir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Autre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_DebutHeure)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_DebutMinute)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_FinHeure)).EndInit();
@@ -429,17 +465,19 @@
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox PB_General;
+        private System.Windows.Forms.PictureBox PB_Travail;
+        private System.Windows.Forms.PictureBox PB_Sante;
+        private System.Windows.Forms.PictureBox PB_Important;
+        private System.Windows.Forms.PictureBox PB_Loisir;
+        private System.Windows.Forms.PictureBox PB_Autre;
         private FlashButton.FlashButton FBTN_Close;
         private FlashButton.FlashButton FBTN_Accepter;
         private System.Windows.Forms.NumericUpDown NUD_DebutHeure;
         private System.Windows.Forms.NumericUpDown NUD_DebutMinute;
         private System.Windows.Forms.NumericUpDown NUD_FinHeure;
         private System.Windows.Forms.NumericUpDown NUD_FinMinute;
+        private System.Windows.Forms.Label LB_2PointsDebut;
+        private System.Windows.Forms.Label LB_2PointsFin;
     }
 }

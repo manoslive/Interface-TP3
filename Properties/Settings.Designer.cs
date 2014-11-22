@@ -60,6 +60,7 @@ namespace Compact_Agenda.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
         public global::System.Drawing.Color colorFontEvenement {
             get {
                 return ((global::System.Drawing.Color)(this["colorFontEvenement"]));
@@ -148,6 +149,78 @@ namespace Compact_Agenda.Properties {
             }
             set {
                 this["tailleWeekView"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
+        public global::System.Drawing.Color colorGeneral {
+            get {
+                return ((global::System.Drawing.Color)(this["colorGeneral"]));
+            }
+            set {
+                this["colorGeneral"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("LightGray")]
+        public global::System.Drawing.Color colorTravail {
+            get {
+                return ((global::System.Drawing.Color)(this["colorTravail"]));
+            }
+            set {
+                this["colorTravail"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("LightGreen")]
+        public global::System.Drawing.Color colorSante {
+            get {
+                return ((global::System.Drawing.Color)(this["colorSante"]));
+            }
+            set {
+                this["colorSante"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("LightPink")]
+        public global::System.Drawing.Color colorImportant {
+            get {
+                return ((global::System.Drawing.Color)(this["colorImportant"]));
+            }
+            set {
+                this["colorImportant"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Orange")]
+        public global::System.Drawing.Color colorLoisir {
+            get {
+                return ((global::System.Drawing.Color)(this["colorLoisir"]));
+            }
+            set {
+                this["colorLoisir"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Beige")]
+        public global::System.Drawing.Color colorAutre {
+            get {
+                return ((global::System.Drawing.Color)(this["colorAutre"]));
+            }
+            set {
+                this["colorAutre"] = value;
             }
         }
     }
