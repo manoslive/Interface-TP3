@@ -26,5 +26,14 @@
     <Setting Name="colorLigneSecondaire" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">LightGray</Value>
     </Setting>
+    <Setting Name="positionWeekView" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
+    </Setting>
+    <Setting Name="positionEvents" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
+    </Setting>
+    <Setting Name="tailleWeekView" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

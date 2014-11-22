@@ -23,6 +23,7 @@ namespace Compact_Agenda
 
         private void DLG_Events_Load(object sender, EventArgs e)
         {
+            this.Location = Properties.Settings.Default.positionEvents;
             delete = false;
             EventToDLG();
             if(deleteCM)
@@ -124,7 +125,8 @@ namespace Compact_Agenda
 
         private void DLG_Events_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            Properties.Settings.Default.positionEvents = this.Location;
+            Properties.Settings.Default.Save();
         }
     }
 }

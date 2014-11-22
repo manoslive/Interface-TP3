@@ -43,15 +43,15 @@
             this.dateSemaineCouranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CM_SemaineCourante = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.CMI_Ligne = new System.Windows.Forms.ToolStripMenuItem();
+            this.couleurLignesSecondaires = new System.Windows.Forms.ToolStripMenuItem();
             this.couleurDeFondToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.policeDesÉvênementsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.couleurDeLaPoliceDesÉvênementsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.policeTitreÉvênementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CM_EnteteHeures = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.couleurDeFondToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.policeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.couleurDeLaPoliceToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.policeTitreÉvênementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.couleurLignesSecondaires = new System.Windows.Forms.ToolStripMenuItem();
             this.PN_Scroll = new Compact_Agenda.DoubleBufferPanel();
             this.PN_Content = new Compact_Agenda.DoubleBufferPanel();
             this.PN_Hours = new Compact_Agenda.DoubleBufferPanel();
@@ -110,6 +110,7 @@
             this.PN_Frame.Name = "PN_Frame";
             this.PN_Frame.Size = new System.Drawing.Size(1114, 906);
             this.PN_Frame.TabIndex = 4;
+            this.PN_Frame.Paint += new System.Windows.Forms.PaintEventHandler(this.PN_Frame_Paint);
             // 
             // CM_Event
             // 
@@ -186,7 +187,7 @@
             this.couleurDeLaPoliceDesÉvênementsToolStripMenuItem,
             this.policeTitreÉvênementToolStripMenuItem});
             this.CM_SemaineCourante.Name = "CM_SemaineCourante";
-            this.CM_SemaineCourante.Size = new System.Drawing.Size(374, 217);
+            this.CM_SemaineCourante.Size = new System.Drawing.Size(374, 184);
             // 
             // CMI_Ligne
             // 
@@ -194,6 +195,13 @@
             this.CMI_Ligne.Size = new System.Drawing.Size(373, 30);
             this.CMI_Ligne.Text = "Couleur lignes verticales...";
             this.CMI_Ligne.Click += new System.EventHandler(this.CMI_Ligne_Click);
+            // 
+            // couleurLignesSecondaires
+            // 
+            this.couleurLignesSecondaires.Name = "couleurLignesSecondaires";
+            this.couleurLignesSecondaires.Size = new System.Drawing.Size(373, 30);
+            this.couleurLignesSecondaires.Text = "Couleur lignes secondaires";
+            this.couleurLignesSecondaires.Click += new System.EventHandler(this.couleurLignesHorizontalesToolStripMenuItem_Click);
             // 
             // couleurDeFondToolStripMenuItem
             // 
@@ -215,6 +223,13 @@
             this.couleurDeLaPoliceDesÉvênementsToolStripMenuItem.Size = new System.Drawing.Size(373, 30);
             this.couleurDeLaPoliceDesÉvênementsToolStripMenuItem.Text = "Couleur de la police des évênements";
             this.couleurDeLaPoliceDesÉvênementsToolStripMenuItem.Click += new System.EventHandler(this.couleurDeLaPoliceDesÉvênementsToolStripMenuItem_Click);
+            // 
+            // policeTitreÉvênementToolStripMenuItem
+            // 
+            this.policeTitreÉvênementToolStripMenuItem.Name = "policeTitreÉvênementToolStripMenuItem";
+            this.policeTitreÉvênementToolStripMenuItem.Size = new System.Drawing.Size(373, 30);
+            this.policeTitreÉvênementToolStripMenuItem.Text = "Police titre évênement...";
+            this.policeTitreÉvênementToolStripMenuItem.Click += new System.EventHandler(this.policeTitreÉvênementToolStripMenuItem_Click);
             // 
             // CM_EnteteHeures
             // 
@@ -242,20 +257,6 @@
             this.couleurDeLaPoliceToolStripMenuItem1.Name = "couleurDeLaPoliceToolStripMenuItem1";
             this.couleurDeLaPoliceToolStripMenuItem1.Size = new System.Drawing.Size(252, 30);
             this.couleurDeLaPoliceToolStripMenuItem1.Text = "Couleur de la police...";
-            // 
-            // policeTitreÉvênementToolStripMenuItem
-            // 
-            this.policeTitreÉvênementToolStripMenuItem.Name = "policeTitreÉvênementToolStripMenuItem";
-            this.policeTitreÉvênementToolStripMenuItem.Size = new System.Drawing.Size(373, 30);
-            this.policeTitreÉvênementToolStripMenuItem.Text = "Police titre évênement...";
-            this.policeTitreÉvênementToolStripMenuItem.Click += new System.EventHandler(this.policeTitreÉvênementToolStripMenuItem_Click);
-            // 
-            // couleurLignesSecondaires
-            // 
-            this.couleurLignesSecondaires.Name = "couleurLignesSecondaires";
-            this.couleurLignesSecondaires.Size = new System.Drawing.Size(373, 30);
-            this.couleurLignesSecondaires.Text = "Couleur lignes secondaires";
-            this.couleurLignesSecondaires.Click += new System.EventHandler(this.couleurLignesHorizontalesToolStripMenuItem_Click);
             // 
             // PN_Scroll
             // 
@@ -323,6 +324,7 @@
             this.MinimumSize = new System.Drawing.Size(889, 739);
             this.Name = "Form_WeekView";
             this.Text = "Agenda compacte...";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_WeekView_FormClosing);
             this.Load += new System.EventHandler(this.Form_WeekView_Load);
             this.PN_Frame.ResumeLayout(false);
             this.CM_Event.ResumeLayout(false);

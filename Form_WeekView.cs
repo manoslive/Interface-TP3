@@ -55,6 +55,8 @@ namespace Compact_Agenda
         {
             PN_Scroll.Focus();
             GotoCurrentWeek();
+            this.Size = Properties.Settings.Default.tailleWeekView;
+            this.Location = Properties.Settings.Default.positionWeekView;
         }
 
         private void PN_Scroll_MouseEnter(Object sender, EventArgs e)
@@ -622,11 +624,6 @@ namespace Compact_Agenda
             }
         }
 
-        private void policeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void policeDesÉvênementsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FontDialog dlg = new FontDialog();
@@ -634,6 +631,7 @@ namespace Compact_Agenda
             {
                 Properties.Settings.Default.colorFontEvenement = dlg.Color;
                 Properties.Settings.Default.fontEvenement = dlg.Font;
+                Properties.Settings.Default.Save();
             }
             PN_Content.Refresh();
         }
@@ -652,6 +650,7 @@ namespace Compact_Agenda
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 Properties.Settings.Default.fontEvenementBold = dlg.Font;
+                Properties.Settings.Default.Save();
             }
             PN_Content.Refresh();
         }
@@ -662,6 +661,7 @@ namespace Compact_Agenda
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 Properties.Settings.Default.colorFondContent = dlg.Color;
+                Properties.Settings.Default.Save();
             }
             PN_Content.Refresh();
         }
@@ -672,6 +672,7 @@ namespace Compact_Agenda
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 Properties.Settings.Default.colorFontEvenement = dlg.Color;
+                Properties.Settings.Default.Save();
             }
             PN_Content.Refresh();
         }
@@ -682,6 +683,7 @@ namespace Compact_Agenda
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 Properties.Settings.Default.colorLigneVerticale = dlg.Color;
+                Properties.Settings.Default.Save();
             }
             PN_Content.Refresh();
         }
@@ -691,9 +693,22 @@ namespace Compact_Agenda
             ColorDialog dlg = new ColorDialog();
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                Properties.Settings.Default.colorLigneVerticale = dlg.Color;
+                Properties.Settings.Default.colorLigneSecondaire = dlg.Color;
+                Properties.Settings.Default.Save();
             }
             PN_Content.Refresh();
+        }
+
+        private void PN_Frame_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Form_WeekView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.positionWeekView = this.Location;
+            Properties.Settings.Default.tailleWeekView = this.Size;
+            Properties.Settings.Default.Save();
         }
     }
 }

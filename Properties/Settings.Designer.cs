@@ -114,5 +114,41 @@ namespace Compact_Agenda.Properties {
                 this["colorLigneSecondaire"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point positionWeekView {
+            get {
+                return ((global::System.Drawing.Point)(this["positionWeekView"]));
+            }
+            set {
+                this["positionWeekView"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point positionEvents {
+            get {
+                return ((global::System.Drawing.Point)(this["positionEvents"]));
+            }
+            set {
+                this["positionEvents"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Size tailleWeekView {
+            get {
+                return ((global::System.Drawing.Size)(this["tailleWeekView"]));
+            }
+            set {
+                this["tailleWeekView"] = value;
+            }
+        }
     }
 }
