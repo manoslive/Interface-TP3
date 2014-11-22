@@ -215,9 +215,88 @@ namespace Compact_Agenda
 
         private void PB_General_MouseHover(object sender, EventArgs e)
         {
-            int Pb = 0;
-            Pb = this.BackColor.ToArgb();
-            MessageBox.Show(Pb.ToString());
+        }
+
+        private void PB_General_MouseHover(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void PB_General_Click(object sender, EventArgs e)
+        {
+            ColorDialog dlg = new ColorDialog();
+            if(dlg.ShowDialog() ==  System.Windows.Forms.DialogResult.OK)
+            {
+                Properties.Settings.Default.colorGeneral = dlg.Color;
+                Properties.Settings.Default.Save();
+                PB_General.BackColor = Properties.Settings.Default.colorGeneral;
+            }
+            
+        }
+
+        private void PB_Travail_Click(object sender, EventArgs e)
+        {
+            ColorDialog dlg = new ColorDialog();
+            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                Properties.Settings.Default.colorTravail = dlg.Color;
+                Properties.Settings.Default.Save();
+                PB_Travail.BackColor = Properties.Settings.Default.colorTravail;
+            }
+           
+        }
+
+        private void PB_Sante_Click(object sender, EventArgs e)
+        {
+            ColorDialog dlg = new ColorDialog();
+            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                Properties.Settings.Default.colorSante = dlg.Color;
+                Properties.Settings.Default.Save();
+                PB_Sante.BackColor = Properties.Settings.Default.colorSante;
+            }
+            
+        }
+
+        private void PB_Important_Click(object sender, EventArgs e)
+        {
+            ColorDialog dlg = new ColorDialog();
+            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                Properties.Settings.Default.colorImportant = dlg.Color;
+                Properties.Settings.Default.Save();
+                PB_Important.BackColor = Properties.Settings.Default.colorImportant;
+            }
+            
+        }
+
+        private void PB_Loisir_Click(object sender, EventArgs e)
+        {
+            ColorDialog dlg = new ColorDialog();
+            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                Properties.Settings.Default.colorLoisir = dlg.Color;
+                Properties.Settings.Default.Save();
+                PB_Loisir.BackColor = Properties.Settings.Default.colorLoisir;
+            }
+            
+        }
+
+        private void PB_Autre_Click(object sender, EventArgs e)
+        {
+            ColorDialog dlg = new ColorDialog();
+            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                Properties.Settings.Default.colorAutre = dlg.Color;
+                Properties.Settings.Default.Save();
+                PB_Autre.BackColor = Properties.Settings.Default.colorAutre;
+            }
+            
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            Event.
         }
     }
 }

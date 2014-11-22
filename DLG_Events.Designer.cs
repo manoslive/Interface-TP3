@@ -254,6 +254,7 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Général";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // PB_General
             // 
@@ -263,7 +264,7 @@
             this.PB_General.Size = new System.Drawing.Size(59, 28);
             this.PB_General.TabIndex = 48;
             this.PB_General.TabStop = false;
-            this.PB_General.MouseHover += new System.EventHandler(this.PB_General_MouseHover);
+            this.PB_General.Click += new System.EventHandler(this.PB_General_Click);
             // 
             // PB_Travail
             // 
@@ -273,6 +274,7 @@
             this.PB_Travail.Size = new System.Drawing.Size(59, 28);
             this.PB_Travail.TabIndex = 48;
             this.PB_Travail.TabStop = false;
+            this.PB_Travail.Click += new System.EventHandler(this.PB_Travail_Click);
             // 
             // PB_Sante
             // 
@@ -282,6 +284,7 @@
             this.PB_Sante.Size = new System.Drawing.Size(59, 28);
             this.PB_Sante.TabIndex = 48;
             this.PB_Sante.TabStop = false;
+            this.PB_Sante.Click += new System.EventHandler(this.PB_Sante_Click);
             // 
             // PB_Important
             // 
@@ -291,6 +294,7 @@
             this.PB_Important.Size = new System.Drawing.Size(59, 28);
             this.PB_Important.TabIndex = 48;
             this.PB_Important.TabStop = false;
+            this.PB_Important.Click += new System.EventHandler(this.PB_Important_Click);
             // 
             // PB_Loisir
             // 
@@ -300,6 +304,7 @@
             this.PB_Loisir.Size = new System.Drawing.Size(59, 28);
             this.PB_Loisir.TabIndex = 48;
             this.PB_Loisir.TabStop = false;
+            this.PB_Loisir.Click += new System.EventHandler(this.PB_Loisir_Click);
             // 
             // PB_Autre
             // 
@@ -309,6 +314,7 @@
             this.PB_Autre.Size = new System.Drawing.Size(59, 28);
             this.PB_Autre.TabIndex = 48;
             this.PB_Autre.TabStop = false;
+            this.PB_Autre.Click += new System.EventHandler(this.PB_Autre_Click);
             // 
             // FBTN_Close
             // 
