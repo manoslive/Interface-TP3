@@ -27,7 +27,7 @@ namespace Compact_Agenda
         {
             this.Id = Id;
             this.Title = Title;
-            this.Description = Description;;
+            this.Description = Description; ;
             this.Starting = Starting;
             this.Ending = Ending;
         }
@@ -70,7 +70,7 @@ namespace Compact_Agenda
             float minutes = (Pixel / (float)Height) * totalMinutesInDay;
             return (int)minutes;
         }
-          
+
         public static int HourToPixel(int Hour, int Minute, int Height)
         {
             float minutes = Hour * 60F + Minute;
@@ -96,11 +96,11 @@ namespace Compact_Agenda
         {
             if (ParentPanel != null)
             {
-                Point Location = new Point(DayOfWeekToPixel(Starting, ParentPanel.Width)+1, HourToPixel(Starting, ParentPanel.Height));
+                Point Location = new Point(DayOfWeekToPixel(Starting, ParentPanel.Width) + 1, HourToPixel(Starting, ParentPanel.Height));
                 int Height = HourToPixel(Ending, ParentPanel.Height) - HourToPixel(Starting, ParentPanel.Height);
                 int width = (int)Math.Round(ParentPanel.Width / 7F);
 
-                Rectangle border = new Rectangle(Location, new Size(width-2, Height));
+                Rectangle border = new Rectangle(Location, new Size(width - 2, Height));
                 return border;
             }
             return new Rectangle();
@@ -121,24 +121,18 @@ namespace Compact_Agenda
             string time = TimeToString(Starting) + "-" + TimeToString(Ending);
 
             int fontSize = 8;
-            using (Font font = new Font("Arial", fontSize-1, FontStyle.Regular, GraphicsUnit.Point))
-            {
-                using (Font font2 = new Font("Arial", fontSize+1, FontStyle.Bold, GraphicsUnit.Point))
-                {
-                    System.Windows.Forms.TextFormatFlags flags = System.Windows.Forms.TextFormatFlags.WordEllipsis | System.Windows.Forms.TextFormatFlags.HorizontalCenter;
-                    Rectangle border = GetBorder();
-                    fontSize += 6;
+            System.Windows.Forms.TextFormatFlags flags = System.Windows.Forms.TextFormatFlags.WordEllipsis | System.Windows.Forms.TextFormatFlags.HorizontalCenter;
+            Rectangle border = GetBorder();
+            fontSize += 6;
 
-                    System.Windows.Forms.TextRenderer.DrawText(DC, time, font, border, Color.Black, flags);
-                    border = new Rectangle(border.Location.X, border.Location.Y + fontSize, border.Width, border.Height - fontSize);
+            System.Windows.Forms.TextRenderer.DrawText(DC, time, Properties.Settings.Default.fontEvenement, border, Color.Black, flags);
+            border = new Rectangle(border.Location.X, border.Location.Y + fontSize, border.Width, border.Height - fontSize);
 
-                    System.Windows.Forms.TextRenderer.DrawText(DC, Title, font2, border, Color.Black, flags);
-                    border = new Rectangle(border.Location.X, border.Location.Y + fontSize, border.Width, border.Height - fontSize);
+            System.Windows.Forms.TextRenderer.DrawText(DC, Title, Properties.Settings.Default.fontEvenementBold, border, Color.Black, flags);
+            border = new Rectangle(border.Location.X, border.Location.Y + fontSize, border.Width, border.Height - fontSize);
 
-                    flags = System.Windows.Forms.TextFormatFlags.WordBreak;
-                    System.Windows.Forms.TextRenderer.DrawText(DC, Description, font, border, Color.Black, flags);
-                }
-            }
+            flags = System.Windows.Forms.TextFormatFlags.WordBreak;
+            System.Windows.Forms.TextRenderer.DrawText(DC, Description, Properties.Settings.Default.fontEvenement, border, Color.Black, flags);
         }
     }
 }

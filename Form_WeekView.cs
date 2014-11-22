@@ -87,8 +87,8 @@ namespace Compact_Agenda
         private void Fill_Agenda(Graphics DC)
         {
             Brush brush = new SolidBrush(Color.Black);
-            Pen pen1 = new Pen(Color.LightGray, 1);
-            Pen pen2 = new Pen(Color.LightGray, 1);
+            Pen pen1 = new Pen(Properties.Settings.Default.colorLigneVerticale, 1);
+            Pen pen2 = new Pen(Properties.Settings.Default.colorLigneSecondaire, 1);
             pen2.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             for (int hour = 0; hour < 24; hour++)
             {
@@ -569,6 +569,10 @@ namespace Compact_Agenda
                     EventContextMenu();
                     PN_Content.Refresh();
                 }
+                else if (evenement.TargetEvent == null)
+                {
+                    CM_SemaineCourante.Show(Cursor.Position);
+                }
             }
         }
 
@@ -607,6 +611,88 @@ namespace Compact_Agenda
             Event newEvent = new Event(evenement.TargetEvent.Id, evenement.TargetEvent.Title, evenement.TargetEvent.Description, evenement.TargetEvent.Starting.AddDays(1), evenement.TargetEvent.Ending.AddDays(1));
             evenement.Add(newEvent);
             GetWeekEvents();
+            PN_Content.Refresh();
+        }
+
+        private void PN_DaysHeader_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                CM_EnteteJour.Show(Cursor.Position);
+            }
+        }
+
+        private void policeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void policeDesÉvênementsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FontDialog dlg = new FontDialog();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                Properties.Settings.Default.colorFontEvenement = dlg.Color;
+                Properties.Settings.Default.fontEvenement = dlg.Font;
+            }
+            PN_Content.Refresh();
+        }
+
+        private void PN_Hours_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                CM_EnteteHeures.Show(Cursor.Position);
+            }
+        }
+
+        private void policeTitreÉvênementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FontDialog dlg = new FontDialog();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                Properties.Settings.Default.fontEvenementBold = dlg.Font;
+            }
+            PN_Content.Refresh();
+        }
+
+        private void couleurDeFondToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog dlg = new ColorDialog();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                Properties.Settings.Default.colorFondContent = dlg.Color;
+            }
+            PN_Content.Refresh();
+        }
+
+        private void couleurDeLaPoliceDesÉvênementsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog dlg = new ColorDialog();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                Properties.Settings.Default.colorFontEvenement = dlg.Color;
+            }
+            PN_Content.Refresh();
+        }
+
+        private void CMI_Ligne_Click(object sender, EventArgs e)
+        {
+            ColorDialog dlg = new ColorDialog();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                Properties.Settings.Default.colorLigneVerticale = dlg.Color;
+            }
+            PN_Content.Refresh();
+        }
+
+        private void couleurLignesHorizontalesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog dlg = new ColorDialog();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                Properties.Settings.Default.colorLigneVerticale = dlg.Color;
+            }
             PN_Content.Refresh();
         }
     }

@@ -32,18 +32,36 @@
             this.FBTN_IncrementWeek = new FlashButton.FlashButton();
             this.FBTN_DecrementWeek = new FlashButton.FlashButton();
             this.PN_Frame = new System.Windows.Forms.Panel();
-            this.PN_Scroll = new Compact_Agenda.DoubleBufferPanel();
-            this.PN_Content = new Compact_Agenda.DoubleBufferPanel();
-            this.PN_Hours = new Compact_Agenda.DoubleBufferPanel();
-            this.PN_DaysHeader = new Compact_Agenda.DoubleBufferPanel();
             this.CM_Event = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.CMI_Modifier = new System.Windows.Forms.ToolStripMenuItem();
             this.CMI_Effacer = new System.Windows.Forms.ToolStripMenuItem();
             this.CMI_Reporter = new System.Windows.Forms.ToolStripMenuItem();
             this.CMI_Dupliquer = new System.Windows.Forms.ToolStripMenuItem();
+            this.CM_EnteteJour = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.CMI_CouleurFond = new System.Windows.Forms.ToolStripMenuItem();
+            this.CMI_CouleurLigne = new System.Windows.Forms.ToolStripMenuItem();
+            this.dateSemaineCouranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CM_SemaineCourante = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.CMI_Ligne = new System.Windows.Forms.ToolStripMenuItem();
+            this.couleurDeFondToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.policeDesÉvênementsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.couleurDeLaPoliceDesÉvênementsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CM_EnteteHeures = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.couleurDeFondToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.policeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.couleurDeLaPoliceToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.policeTitreÉvênementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.couleurLignesSecondaires = new System.Windows.Forms.ToolStripMenuItem();
+            this.PN_Scroll = new Compact_Agenda.DoubleBufferPanel();
+            this.PN_Content = new Compact_Agenda.DoubleBufferPanel();
+            this.PN_Hours = new Compact_Agenda.DoubleBufferPanel();
+            this.PN_DaysHeader = new Compact_Agenda.DoubleBufferPanel();
             this.PN_Frame.SuspendLayout();
-            this.PN_Scroll.SuspendLayout();
             this.CM_Event.SuspendLayout();
+            this.CM_EnteteJour.SuspendLayout();
+            this.CM_SemaineCourante.SuspendLayout();
+            this.CM_EnteteHeures.SuspendLayout();
+            this.PN_Scroll.SuspendLayout();
             this.SuspendLayout();
             // 
             // FBTN_IncrementWeek
@@ -93,6 +111,152 @@
             this.PN_Frame.Size = new System.Drawing.Size(1114, 906);
             this.PN_Frame.TabIndex = 4;
             // 
+            // CM_Event
+            // 
+            this.CM_Event.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CMI_Modifier,
+            this.CMI_Effacer,
+            this.CMI_Reporter,
+            this.CMI_Dupliquer});
+            this.CM_Event.Name = "CM_Event";
+            this.CM_Event.Size = new System.Drawing.Size(273, 124);
+            // 
+            // CMI_Modifier
+            // 
+            this.CMI_Modifier.Name = "CMI_Modifier";
+            this.CMI_Modifier.Size = new System.Drawing.Size(272, 30);
+            this.CMI_Modifier.Text = "Modifier...";
+            this.CMI_Modifier.Click += new System.EventHandler(this.CMI_Modifier_Click);
+            // 
+            // CMI_Effacer
+            // 
+            this.CMI_Effacer.Name = "CMI_Effacer";
+            this.CMI_Effacer.Size = new System.Drawing.Size(272, 30);
+            this.CMI_Effacer.Text = "Effacer...";
+            this.CMI_Effacer.Click += new System.EventHandler(this.CMI_Effacer_Click);
+            // 
+            // CMI_Reporter
+            // 
+            this.CMI_Reporter.Name = "CMI_Reporter";
+            this.CMI_Reporter.Size = new System.Drawing.Size(272, 30);
+            this.CMI_Reporter.Text = "Reporter d\'une semaine";
+            this.CMI_Reporter.Click += new System.EventHandler(this.CMI_Reporter_Click);
+            // 
+            // CMI_Dupliquer
+            // 
+            this.CMI_Dupliquer.Name = "CMI_Dupliquer";
+            this.CMI_Dupliquer.Size = new System.Drawing.Size(272, 30);
+            this.CMI_Dupliquer.Text = "Dupliquer...";
+            this.CMI_Dupliquer.Click += new System.EventHandler(this.CMI_Dupliquer_Click);
+            // 
+            // CM_EnteteJour
+            // 
+            this.CM_EnteteJour.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CMI_CouleurFond,
+            this.CMI_CouleurLigne,
+            this.dateSemaineCouranteToolStripMenuItem});
+            this.CM_EnteteJour.Name = "CM_SemaineCourante";
+            this.CM_EnteteJour.Size = new System.Drawing.Size(278, 94);
+            // 
+            // CMI_CouleurFond
+            // 
+            this.CMI_CouleurFond.Name = "CMI_CouleurFond";
+            this.CMI_CouleurFond.Size = new System.Drawing.Size(277, 30);
+            this.CMI_CouleurFond.Text = "Couleur de fond...";
+            // 
+            // CMI_CouleurLigne
+            // 
+            this.CMI_CouleurLigne.Name = "CMI_CouleurLigne";
+            this.CMI_CouleurLigne.Size = new System.Drawing.Size(277, 30);
+            this.CMI_CouleurLigne.Text = "Couleur des lignes...";
+            // 
+            // dateSemaineCouranteToolStripMenuItem
+            // 
+            this.dateSemaineCouranteToolStripMenuItem.Name = "dateSemaineCouranteToolStripMenuItem";
+            this.dateSemaineCouranteToolStripMenuItem.Size = new System.Drawing.Size(277, 30);
+            this.dateSemaineCouranteToolStripMenuItem.Text = "Date semaine courante...";
+            // 
+            // CM_SemaineCourante
+            // 
+            this.CM_SemaineCourante.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CMI_Ligne,
+            this.couleurLignesSecondaires,
+            this.couleurDeFondToolStripMenuItem,
+            this.policeDesÉvênementsToolStripMenuItem,
+            this.couleurDeLaPoliceDesÉvênementsToolStripMenuItem,
+            this.policeTitreÉvênementToolStripMenuItem});
+            this.CM_SemaineCourante.Name = "CM_SemaineCourante";
+            this.CM_SemaineCourante.Size = new System.Drawing.Size(374, 217);
+            // 
+            // CMI_Ligne
+            // 
+            this.CMI_Ligne.Name = "CMI_Ligne";
+            this.CMI_Ligne.Size = new System.Drawing.Size(373, 30);
+            this.CMI_Ligne.Text = "Couleur lignes verticales...";
+            this.CMI_Ligne.Click += new System.EventHandler(this.CMI_Ligne_Click);
+            // 
+            // couleurDeFondToolStripMenuItem
+            // 
+            this.couleurDeFondToolStripMenuItem.Name = "couleurDeFondToolStripMenuItem";
+            this.couleurDeFondToolStripMenuItem.Size = new System.Drawing.Size(373, 30);
+            this.couleurDeFondToolStripMenuItem.Text = "Couleur de fond...";
+            this.couleurDeFondToolStripMenuItem.Click += new System.EventHandler(this.couleurDeFondToolStripMenuItem_Click);
+            // 
+            // policeDesÉvênementsToolStripMenuItem
+            // 
+            this.policeDesÉvênementsToolStripMenuItem.Name = "policeDesÉvênementsToolStripMenuItem";
+            this.policeDesÉvênementsToolStripMenuItem.Size = new System.Drawing.Size(373, 30);
+            this.policeDesÉvênementsToolStripMenuItem.Text = "Police description évênement...";
+            this.policeDesÉvênementsToolStripMenuItem.Click += new System.EventHandler(this.policeDesÉvênementsToolStripMenuItem_Click);
+            // 
+            // couleurDeLaPoliceDesÉvênementsToolStripMenuItem
+            // 
+            this.couleurDeLaPoliceDesÉvênementsToolStripMenuItem.Name = "couleurDeLaPoliceDesÉvênementsToolStripMenuItem";
+            this.couleurDeLaPoliceDesÉvênementsToolStripMenuItem.Size = new System.Drawing.Size(373, 30);
+            this.couleurDeLaPoliceDesÉvênementsToolStripMenuItem.Text = "Couleur de la police des évênements";
+            this.couleurDeLaPoliceDesÉvênementsToolStripMenuItem.Click += new System.EventHandler(this.couleurDeLaPoliceDesÉvênementsToolStripMenuItem_Click);
+            // 
+            // CM_EnteteHeures
+            // 
+            this.CM_EnteteHeures.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.couleurDeFondToolStripMenuItem1,
+            this.policeToolStripMenuItem1,
+            this.couleurDeLaPoliceToolStripMenuItem1});
+            this.CM_EnteteHeures.Name = "CM_EnteteHeures";
+            this.CM_EnteteHeures.Size = new System.Drawing.Size(253, 94);
+            // 
+            // couleurDeFondToolStripMenuItem1
+            // 
+            this.couleurDeFondToolStripMenuItem1.Name = "couleurDeFondToolStripMenuItem1";
+            this.couleurDeFondToolStripMenuItem1.Size = new System.Drawing.Size(252, 30);
+            this.couleurDeFondToolStripMenuItem1.Text = "Couleur de fond...";
+            // 
+            // policeToolStripMenuItem1
+            // 
+            this.policeToolStripMenuItem1.Name = "policeToolStripMenuItem1";
+            this.policeToolStripMenuItem1.Size = new System.Drawing.Size(252, 30);
+            this.policeToolStripMenuItem1.Text = "Police...";
+            // 
+            // couleurDeLaPoliceToolStripMenuItem1
+            // 
+            this.couleurDeLaPoliceToolStripMenuItem1.Name = "couleurDeLaPoliceToolStripMenuItem1";
+            this.couleurDeLaPoliceToolStripMenuItem1.Size = new System.Drawing.Size(252, 30);
+            this.couleurDeLaPoliceToolStripMenuItem1.Text = "Couleur de la police...";
+            // 
+            // policeTitreÉvênementToolStripMenuItem
+            // 
+            this.policeTitreÉvênementToolStripMenuItem.Name = "policeTitreÉvênementToolStripMenuItem";
+            this.policeTitreÉvênementToolStripMenuItem.Size = new System.Drawing.Size(373, 30);
+            this.policeTitreÉvênementToolStripMenuItem.Text = "Police titre évênement...";
+            this.policeTitreÉvênementToolStripMenuItem.Click += new System.EventHandler(this.policeTitreÉvênementToolStripMenuItem_Click);
+            // 
+            // couleurLignesSecondaires
+            // 
+            this.couleurLignesSecondaires.Name = "couleurLignesSecondaires";
+            this.couleurLignesSecondaires.Size = new System.Drawing.Size(373, 30);
+            this.couleurLignesSecondaires.Text = "Couleur lignes secondaires";
+            this.couleurLignesSecondaires.Click += new System.EventHandler(this.couleurLignesHorizontalesToolStripMenuItem_Click);
+            // 
             // PN_Scroll
             // 
             this.PN_Scroll.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -134,6 +298,7 @@
             this.PN_Hours.Size = new System.Drawing.Size(54, 797);
             this.PN_Hours.TabIndex = 1;
             this.PN_Hours.Paint += new System.Windows.Forms.PaintEventHandler(this.PN_Hours_Paint);
+            this.PN_Hours.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PN_Hours_MouseClick);
             // 
             // PN_DaysHeader
             // 
@@ -144,44 +309,7 @@
             this.PN_DaysHeader.Size = new System.Drawing.Size(942, 49);
             this.PN_DaysHeader.TabIndex = 0;
             this.PN_DaysHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.PN_DaysHeader_Paint);
-            // 
-            // CM_Event
-            // 
-            this.CM_Event.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.CMI_Modifier,
-            this.CMI_Effacer,
-            this.CMI_Reporter,
-            this.CMI_Dupliquer});
-            this.CM_Event.Name = "CM_Event";
-            this.CM_Event.Size = new System.Drawing.Size(273, 124);
-            // 
-            // CMI_Modifier
-            // 
-            this.CMI_Modifier.Name = "CMI_Modifier";
-            this.CMI_Modifier.Size = new System.Drawing.Size(272, 30);
-            this.CMI_Modifier.Text = "Modifier...";
-            this.CMI_Modifier.Click += new System.EventHandler(this.CMI_Modifier_Click);
-            // 
-            // CMI_Effacer
-            // 
-            this.CMI_Effacer.Name = "CMI_Effacer";
-            this.CMI_Effacer.Size = new System.Drawing.Size(272, 30);
-            this.CMI_Effacer.Text = "Effacer...";
-            this.CMI_Effacer.Click += new System.EventHandler(this.CMI_Effacer_Click);
-            // 
-            // CMI_Reporter
-            // 
-            this.CMI_Reporter.Name = "CMI_Reporter";
-            this.CMI_Reporter.Size = new System.Drawing.Size(272, 30);
-            this.CMI_Reporter.Text = "Reporter d\'une semaine";
-            this.CMI_Reporter.Click += new System.EventHandler(this.CMI_Reporter_Click);
-            // 
-            // CMI_Dupliquer
-            // 
-            this.CMI_Dupliquer.Name = "CMI_Dupliquer";
-            this.CMI_Dupliquer.Size = new System.Drawing.Size(272, 30);
-            this.CMI_Dupliquer.Text = "Dupliquer...";
-            this.CMI_Dupliquer.Click += new System.EventHandler(this.CMI_Dupliquer_Click);
+            this.PN_DaysHeader.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PN_DaysHeader_MouseClick);
             // 
             // Form_WeekView
             // 
@@ -197,8 +325,11 @@
             this.Text = "Agenda compacte...";
             this.Load += new System.EventHandler(this.Form_WeekView_Load);
             this.PN_Frame.ResumeLayout(false);
-            this.PN_Scroll.ResumeLayout(false);
             this.CM_Event.ResumeLayout(false);
+            this.CM_EnteteJour.ResumeLayout(false);
+            this.CM_SemaineCourante.ResumeLayout(false);
+            this.CM_EnteteHeures.ResumeLayout(false);
+            this.PN_Scroll.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -217,6 +348,21 @@
         private System.Windows.Forms.ToolStripMenuItem CMI_Effacer;
         private System.Windows.Forms.ToolStripMenuItem CMI_Reporter;
         private System.Windows.Forms.ToolStripMenuItem CMI_Dupliquer;
+        private System.Windows.Forms.ContextMenuStrip CM_EnteteJour;
+        private System.Windows.Forms.ToolStripMenuItem CMI_CouleurFond;
+        private System.Windows.Forms.ToolStripMenuItem CMI_CouleurLigne;
+        private System.Windows.Forms.ToolStripMenuItem dateSemaineCouranteToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip CM_SemaineCourante;
+        private System.Windows.Forms.ToolStripMenuItem CMI_Ligne;
+        private System.Windows.Forms.ToolStripMenuItem couleurDeFondToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem policeDesÉvênementsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem couleurDeLaPoliceDesÉvênementsToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip CM_EnteteHeures;
+        private System.Windows.Forms.ToolStripMenuItem couleurDeFondToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem policeToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem couleurDeLaPoliceToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem policeTitreÉvênementToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem couleurLignesSecondaires;
 
     }
 }
