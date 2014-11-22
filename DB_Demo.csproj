@@ -155,6 +155,141 @@
       <Name>FlashButton</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\office_calendar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Accepter_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Accepter_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Accepter_Neutral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Accepter_Over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Ajouter_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Ajouter_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Ajouter_Neutral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Ajouter_Over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Annuler_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Annuler_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Annuler_Neutral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Annuler_Over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Editer_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Editer_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Editer_Neutre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Editer_Survol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Effacer_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Effacer_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Effacer_Neutral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Effacer_Over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Nouveau_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Nouveau_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Nouveau_Neutral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Nouveau_Over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Open_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Open_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Open_Neutral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Open_Over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Save_As_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Save_As_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Save_As_Neutral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Save_As_Over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Save_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Save_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Save_Neutral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Save_Over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Trier-Ascendant_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Trier-Ascendant_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Trier-Ascendant_Neutral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Trier-Ascendant_Over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Trier-Descendant_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Trier-Descendant_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Trier-Descendant_Neutral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_Trier-Descendant_Over.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
