@@ -32,18 +32,18 @@
             this.FBTN_IncrementWeek = new FlashButton.FlashButton();
             this.FBTN_DecrementWeek = new FlashButton.FlashButton();
             this.PN_Frame = new System.Windows.Forms.Panel();
-            this.CM_Event = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.modifierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.effacerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporterDuneSemaineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dupliquerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PN_Scroll = new Compact_Agenda.DoubleBufferPanel();
             this.PN_Content = new Compact_Agenda.DoubleBufferPanel();
             this.PN_Hours = new Compact_Agenda.DoubleBufferPanel();
             this.PN_DaysHeader = new Compact_Agenda.DoubleBufferPanel();
+            this.CM_Event = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.CMI_Modifier = new System.Windows.Forms.ToolStripMenuItem();
+            this.CMI_Effacer = new System.Windows.Forms.ToolStripMenuItem();
+            this.CMI_Reporter = new System.Windows.Forms.ToolStripMenuItem();
+            this.CMI_Dupliquer = new System.Windows.Forms.ToolStripMenuItem();
             this.PN_Frame.SuspendLayout();
-            this.CM_Event.SuspendLayout();
             this.PN_Scroll.SuspendLayout();
+            this.CM_Event.SuspendLayout();
             this.SuspendLayout();
             // 
             // FBTN_IncrementWeek
@@ -92,40 +92,6 @@
             this.PN_Frame.Name = "PN_Frame";
             this.PN_Frame.Size = new System.Drawing.Size(1114, 906);
             this.PN_Frame.TabIndex = 4;
-            // 
-            // CM_Event
-            // 
-            this.CM_Event.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.modifierToolStripMenuItem,
-            this.effacerToolStripMenuItem,
-            this.reporterDuneSemaineToolStripMenuItem,
-            this.dupliquerToolStripMenuItem});
-            this.CM_Event.Name = "CM_Event";
-            this.CM_Event.Size = new System.Drawing.Size(273, 124);
-            // 
-            // modifierToolStripMenuItem
-            // 
-            this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
-            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(272, 30);
-            this.modifierToolStripMenuItem.Text = "Modifier...";
-            // 
-            // effacerToolStripMenuItem
-            // 
-            this.effacerToolStripMenuItem.Name = "effacerToolStripMenuItem";
-            this.effacerToolStripMenuItem.Size = new System.Drawing.Size(272, 30);
-            this.effacerToolStripMenuItem.Text = "Effacer...";
-            // 
-            // reporterDuneSemaineToolStripMenuItem
-            // 
-            this.reporterDuneSemaineToolStripMenuItem.Name = "reporterDuneSemaineToolStripMenuItem";
-            this.reporterDuneSemaineToolStripMenuItem.Size = new System.Drawing.Size(272, 30);
-            this.reporterDuneSemaineToolStripMenuItem.Text = "Reporter d\'une semaine";
-            // 
-            // dupliquerToolStripMenuItem
-            // 
-            this.dupliquerToolStripMenuItem.Name = "dupliquerToolStripMenuItem";
-            this.dupliquerToolStripMenuItem.Size = new System.Drawing.Size(272, 30);
-            this.dupliquerToolStripMenuItem.Text = "Dupliquer...";
             // 
             // PN_Scroll
             // 
@@ -179,6 +145,44 @@
             this.PN_DaysHeader.TabIndex = 0;
             this.PN_DaysHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.PN_DaysHeader_Paint);
             // 
+            // CM_Event
+            // 
+            this.CM_Event.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CMI_Modifier,
+            this.CMI_Effacer,
+            this.CMI_Reporter,
+            this.CMI_Dupliquer});
+            this.CM_Event.Name = "CM_Event";
+            this.CM_Event.Size = new System.Drawing.Size(273, 124);
+            // 
+            // CMI_Modifier
+            // 
+            this.CMI_Modifier.Name = "CMI_Modifier";
+            this.CMI_Modifier.Size = new System.Drawing.Size(272, 30);
+            this.CMI_Modifier.Text = "Modifier...";
+            this.CMI_Modifier.Click += new System.EventHandler(this.CMI_Modifier_Click);
+            // 
+            // CMI_Effacer
+            // 
+            this.CMI_Effacer.Name = "CMI_Effacer";
+            this.CMI_Effacer.Size = new System.Drawing.Size(272, 30);
+            this.CMI_Effacer.Text = "Effacer...";
+            this.CMI_Effacer.Click += new System.EventHandler(this.CMI_Effacer_Click);
+            // 
+            // CMI_Reporter
+            // 
+            this.CMI_Reporter.Name = "CMI_Reporter";
+            this.CMI_Reporter.Size = new System.Drawing.Size(272, 30);
+            this.CMI_Reporter.Text = "Reporter d\'une semaine";
+            this.CMI_Reporter.Click += new System.EventHandler(this.CMI_Reporter_Click);
+            // 
+            // CMI_Dupliquer
+            // 
+            this.CMI_Dupliquer.Name = "CMI_Dupliquer";
+            this.CMI_Dupliquer.Size = new System.Drawing.Size(272, 30);
+            this.CMI_Dupliquer.Text = "Dupliquer...";
+            this.CMI_Dupliquer.Click += new System.EventHandler(this.CMI_Dupliquer_Click);
+            // 
             // Form_WeekView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -193,8 +197,8 @@
             this.Text = "Agenda compacte...";
             this.Load += new System.EventHandler(this.Form_WeekView_Load);
             this.PN_Frame.ResumeLayout(false);
-            this.CM_Event.ResumeLayout(false);
             this.PN_Scroll.ResumeLayout(false);
+            this.CM_Event.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -209,10 +213,10 @@
         private FlashButton.FlashButton FBTN_IncrementWeek;
         private System.Windows.Forms.Panel PN_Frame;
         private System.Windows.Forms.ContextMenuStrip CM_Event;
-        private System.Windows.Forms.ToolStripMenuItem modifierToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem effacerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reporterDuneSemaineToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dupliquerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CMI_Modifier;
+        private System.Windows.Forms.ToolStripMenuItem CMI_Effacer;
+        private System.Windows.Forms.ToolStripMenuItem CMI_Reporter;
+        private System.Windows.Forms.ToolStripMenuItem CMI_Dupliquer;
 
     }
 }

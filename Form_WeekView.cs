@@ -28,7 +28,7 @@ namespace Compact_Agenda
     {
         public string ConnexionString;
         private DateTime _CurrentWeek;
-        private Events Events = new Events();
+        private Events evenement = new Events();
         private int minInterval = 5;
         public DateTime CurrentWeek
         {
@@ -70,14 +70,14 @@ namespace Compact_Agenda
         {
             TableEvents tableEvents = new TableEvents(ConnexionString);
             DateTime date = _CurrentWeek;
-            Events.Clear();
+            evenement.Clear();
             for (int day = 0; day < 7; day++)
             {
                 tableEvents.GetDateEvents(date);
                 while (tableEvents.NextEventRecord())
                 {
                     tableEvents.currentEventRecord.ParentPanel = PN_Content;
-                    Events.Add(tableEvents.currentEventRecord);
+                    evenement.Add(tableEvents.currentEventRecord);
                 }
                 tableEvents.EndQuerySQL();
                 date = date.AddDays(1);
@@ -103,7 +103,7 @@ namespace Compact_Agenda
             }
             location = new Point((int)Math.Round(PN_DaysHeader.Width / 7f * 7), 0);
             DC.DrawLine(pen1, location.X - 1, 0, location.X - 1, PN_Content.Height);
-            Events.Draw(DC);
+            evenement.Draw(DC);
             PN_Scroll.Focus();
         }
 
@@ -212,17 +212,17 @@ namespace Compact_Agenda
                 mouseIsDown = true;
                 firstMouseLocation = lastMouseLocation = e.Location;
 
-                if (Events.TargetEvent != null)
+                if (evenement.TargetEvent != null)
                 {
-                    switch (Events.TargetPart)
+                    switch (evenement.TargetPart)
                     {
                         case TargetPart.Top:
                             firstMouseLocation.Y =
-                            lastMouseLocation.Y = RoundToMinutes(Event.HourToPixel(Events.TargetEvent.Starting.Hour, Events.TargetEvent.Starting.Minute, PN_Content.Height), minInterval);
+                            lastMouseLocation.Y = RoundToMinutes(Event.HourToPixel(evenement.TargetEvent.Starting.Hour, evenement.TargetEvent.Starting.Minute, PN_Content.Height), minInterval);
                             break;
                         case TargetPart.Bottom:
                             firstMouseLocation.Y =
-                            lastMouseLocation.Y = RoundToMinutes(Event.HourToPixel(Events.TargetEvent.Ending.Hour, Events.TargetEvent.Ending.Minute, PN_Content.Height), minInterval);
+                            lastMouseLocation.Y = RoundToMinutes(Event.HourToPixel(evenement.TargetEvent.Ending.Hour, evenement.TargetEvent.Ending.Minute, PN_Content.Height), minInterval);
                             break;
                         default: break;
                     }
@@ -232,25 +232,25 @@ namespace Compact_Agenda
 
         private void AjustCurrentWeek()
         {
-            DateTime Target = new DateTime(Events.TargetEvent.Starting.Year, Events.TargetEvent.Starting.Month, Events.TargetEvent.Starting.Day, 0, 0, 0);
+            DateTime Target = new DateTime(evenement.TargetEvent.Starting.Year, evenement.TargetEvent.Starting.Month, evenement.TargetEvent.Starting.Day, 0, 0, 0);
             DateTime CW = new DateTime(_CurrentWeek.Year, _CurrentWeek.Month, _CurrentWeek.Day, 0, 0, 0);
             int delta = (int)(Target - CW).TotalDays;
             if (delta > 6)
             {
-                Event currentTarget = Events.TargetEvent.Klone();
+                Event currentTarget = evenement.TargetEvent.Klone();
                 Increment_Week();
-                Events.Add(currentTarget);
+                evenement.Add(currentTarget);
                 currentTarget.Draw(PN_Content.CreateGraphics());
-                Events.TargetEvent = currentTarget;
+                evenement.TargetEvent = currentTarget;
                 Cursor.Position = new Point(Cursor.Position.X - 7 * (int)(PN_Content.Width / 7F), Cursor.Position.Y);
             }
             if (delta < 0)
             {
-                Event currentTarget = Events.TargetEvent.Klone();
+                Event currentTarget = evenement.TargetEvent.Klone();
                 Decrement_Week();
-                Events.Add(currentTarget);
+                evenement.Add(currentTarget);
                 currentTarget.Draw(PN_Content.CreateGraphics());
-                Events.TargetEvent = currentTarget;
+                evenement.TargetEvent = currentTarget;
                 Cursor.Position = new Point(Cursor.Position.X + 7 * (int)(PN_Content.Width / 7F), Cursor.Position.Y);
             }
         }
@@ -285,36 +285,36 @@ namespace Compact_Agenda
             if (mouseIsDown)
             {
                 AdjustScroll(e.Location.Y);
-                if (Events.TargetEvent != null)
+                if (evenement.TargetEvent != null)
                 {
                     DateTime Moving = LocationToDateTime(new Point(RoundToMinutes(firstMouseLocation.X, minInterval), Bottom));
-                    switch (Events.TargetPart)
+                    switch (evenement.TargetPart)
                     {
                         case TargetPart.Top:
-                            if (Moving > Events.TargetEvent.Ending)
+                            if (Moving > evenement.TargetEvent.Ending)
                             {
-                                Events.TargetPart = TargetPart.Bottom;
-                                Events.TargetEvent.Starting = Klone(Events.TargetEvent.Ending);
-                                Events.TargetEvent.Ending = Moving;
+                                evenement.TargetPart = TargetPart.Bottom;
+                                evenement.TargetEvent.Starting = Klone(evenement.TargetEvent.Ending);
+                                evenement.TargetEvent.Ending = Moving;
                             }
                             else
-                                Events.TargetEvent.Starting = Moving;
+                                evenement.TargetEvent.Starting = Moving;
                             break;
                         case TargetPart.Bottom:
 
-                            if (Moving < Events.TargetEvent.Starting)
+                            if (Moving < evenement.TargetEvent.Starting)
                             {
-                                Events.TargetPart = TargetPart.Top;
-                                Events.TargetEvent.Ending = Klone(Events.TargetEvent.Starting);
-                                Events.TargetEvent.Starting = Moving;
+                                evenement.TargetPart = TargetPart.Top;
+                                evenement.TargetEvent.Ending = Klone(evenement.TargetEvent.Starting);
+                                evenement.TargetEvent.Starting = Moving;
                             }
                             else
-                                Events.TargetEvent.Ending = Moving;
+                                evenement.TargetEvent.Ending = Moving;
                             break;
                         case TargetPart.Inside:
                             int deltaY = RoundToMinutes(e.Location.Y, minInterval) - RoundToMinutes(lastMouseLocation.Y, minInterval);
-                            Events.TargetEvent.Starting = LocationToDateTime(new Point(e.Location.X, RoundToMinutes(Event.HourToPixel(Events.TargetEvent.Starting.Hour, Events.TargetEvent.Starting.Minute, PN_Content.Height) + deltaY, minInterval)));
-                            Events.TargetEvent.Ending = LocationToDateTime(new Point(e.Location.X, RoundToMinutes(Event.HourToPixel(Events.TargetEvent.Ending.Hour, Events.TargetEvent.Ending.Minute, PN_Content.Height) + deltaY, minInterval)));
+                            evenement.TargetEvent.Starting = LocationToDateTime(new Point(e.Location.X, RoundToMinutes(Event.HourToPixel(evenement.TargetEvent.Starting.Hour, evenement.TargetEvent.Starting.Minute, PN_Content.Height) + deltaY, minInterval)));
+                            evenement.TargetEvent.Ending = LocationToDateTime(new Point(e.Location.X, RoundToMinutes(Event.HourToPixel(evenement.TargetEvent.Ending.Hour, evenement.TargetEvent.Ending.Minute, PN_Content.Height) + deltaY, minInterval)));
                             AjustCurrentWeek();
                             break;
                         default: break;
@@ -332,7 +332,7 @@ namespace Compact_Agenda
                 }
             }
             else
-                Events.UpdateTarget(e.Location);
+                evenement.UpdateTarget(e.Location);
             lastMouseLocation = e.Location;
         }
 
@@ -358,23 +358,23 @@ namespace Compact_Agenda
             {
                 mouseIsDown = false;
 
-                if (Events.TargetEvent != null)
+                if (evenement.TargetEvent != null)
                 {
-                    if (Events.TargetEvent.Starting > Events.TargetEvent.Ending)
+                    if (evenement.TargetEvent.Starting > evenement.TargetEvent.Ending)
                     {
-                        Events.TargetPart = TargetPart.Top;
-                        DateTime d = Events.TargetEvent.Starting;
-                        Events.TargetEvent.Starting = Events.TargetEvent.Ending;
-                        Events.TargetEvent.Ending = d;
+                        evenement.TargetPart = TargetPart.Top;
+                        DateTime d = evenement.TargetEvent.Starting;
+                        evenement.TargetEvent.Starting = evenement.TargetEvent.Ending;
+                        evenement.TargetEvent.Ending = d;
                     }
 
-                    TimeSpan delta = Events.TargetEvent.Ending.Subtract(Events.TargetEvent.Starting);
+                    TimeSpan delta = evenement.TargetEvent.Ending.Subtract(evenement.TargetEvent.Starting);
                     if (delta.Minutes < 30 && delta.Hours == 0)
                     {
-                        Events.TargetEvent.Ending = Events.TargetEvent.Starting + new TimeSpan(0, 30, 0);
+                        evenement.TargetEvent.Ending = evenement.TargetEvent.Starting + new TimeSpan(0, 30, 0);
                     }
                     TableEvents tableEvents = new TableEvents(ConnexionString);
-                    tableEvents.UpdateEventRecord(Events.TargetEvent);
+                    tableEvents.UpdateEventRecord(evenement.TargetEvent);
                 }
                 else
                 {
@@ -389,7 +389,7 @@ namespace Compact_Agenda
 
                     if (Event.Starting > Event.Ending)
                     {
-                        Events.TargetPart = TargetPart.Top;
+                        evenement.TargetPart = TargetPart.Top;
                         DateTime d = Event.Starting;
                         Event.Starting = Event.Ending;
                         Event.Ending = d;
@@ -452,29 +452,37 @@ namespace Compact_Agenda
             Increment_Week();
         }
 
+        private void Delete(bool provenanceCM)
+        {
+            DLG_Events dlg = new DLG_Events();
+            dlg.Event = evenement.TargetEvent;
+            if (provenanceCM)
+                dlg.deleteCM = true;
+            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                if (dlg.delete)
+                {
+                    TableEvents tableEvents = new TableEvents(ConnexionString);
+                    tableEvents.DeleteEvent(dlg.Event);
+                    evenement.TargetEvent = null;
+                    mouseIsDown = false;
+                }
+                else
+                {
+                    TableEvents tableEvents = new TableEvents(ConnexionString);
+                    tableEvents.UpdateEventRecord(dlg.Event);
+                }
+            }
+            GetWeekEvents();
+            PN_Content.Refresh();
+        }
+
         private void PN_Content_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if ((Events.TargetEvent != null) && (Events.TargetPart == TargetPart.Inside) && (e.Button == MouseButtons.Left))
+            if ((evenement.TargetEvent != null) && (evenement.TargetPart == TargetPart.Inside) && (e.Button == MouseButtons.Left))
             {
-                DLG_Events dlg = new DLG_Events();
-                dlg.Event = Events.TargetEvent;
-                if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    if (dlg.delete)
-                    {
-                        TableEvents tableEvents = new TableEvents(ConnexionString);
-                        tableEvents.DeleteEvent(dlg.Event);
-                        Events.TargetEvent = null;
-                        mouseIsDown = false;
-                    }
-                    else
-                    {
-                        TableEvents tableEvents = new TableEvents(ConnexionString);
-                        tableEvents.UpdateEventRecord(dlg.Event);
-                    }
-                    GetWeekEvents();
-                    PN_Content.Refresh();
-                }
+                bool provientCM = false;
+                Delete(provientCM);
             }
         }
         private void PN_Content_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
@@ -556,12 +564,50 @@ namespace Compact_Agenda
         {
             if (e.Button == MouseButtons.Right)
             {
-                if (Events.TargetEvent != null)
+                if ((evenement.TargetEvent != null) && (evenement.TargetPart == TargetPart.Inside))
                 {
                     EventContextMenu();
                     PN_Content.Refresh();
                 }
             }
+        }
+
+        private void CMI_Modifier_Click(object sender, EventArgs e)
+        {
+            bool provientCM = false;
+            Delete(provientCM);
+        }
+
+        private void CMI_Effacer_Click(object sender, EventArgs e)
+        {
+            bool provenanceCM = true;
+            Delete(provenanceCM);
+        }
+
+        private void CMI_Reporter_Click(object sender, EventArgs e)
+        {
+            evenement.TargetEvent.Starting = new DateTime(DateTime.Now.Year,
+                                                 DateTime.Now.Month,
+                                                 DateTime.Now.Day + 7,
+                                                 DateTime.Now.Hour,
+                                                 DateTime.Now.Minute,
+                                                 0);
+            evenement.TargetEvent.Ending = new DateTime(DateTime.Now.Year,
+                                     DateTime.Now.Month,
+                                     DateTime.Now.Day + 7,
+                                     DateTime.Now.Hour,
+                                     DateTime.Now.Minute,
+                                     0);
+            GetWeekEvents();
+            PN_Content.Refresh();
+        }
+
+        private void CMI_Dupliquer_Click(object sender, EventArgs e)
+        {
+            Event newEvent = new Event(evenement.TargetEvent.Id, evenement.TargetEvent.Title, evenement.TargetEvent.Description, evenement.TargetEvent.Starting.AddDays(1), evenement.TargetEvent.Ending.AddDays(1));
+            evenement.Add(newEvent);
+            GetWeekEvents();
+            PN_Content.Refresh();
         }
     }
 }

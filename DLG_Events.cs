@@ -15,6 +15,7 @@ namespace Compact_Agenda
         public Event Event { get; set; }
         private bool blockUpdate;
         public bool delete = false;
+        public bool deleteCM = false;
         public DLG_Events()
         {
             InitializeComponent();
@@ -24,6 +25,8 @@ namespace Compact_Agenda
         {
             delete = false;
             EventToDLG();
+            if(deleteCM)
+                Effacer();
         }
 
         public static DateTime Klone(DateTime date)
@@ -104,7 +107,7 @@ namespace Compact_Agenda
             }
         }
 
-        private void BTN_Effacer_Click(object sender, EventArgs e)
+        private void Effacer()
         {
             if (MessageBox.Show("Voulez vous vraiment effacer cet événement ?") == System.Windows.Forms.DialogResult.OK)
             {
@@ -112,6 +115,16 @@ namespace Compact_Agenda
                 delete = true;
                 this.Close();
             }
+        }
+
+        private void BTN_Effacer_Click(object sender, EventArgs e)
+        {
+            Effacer();
+        }
+
+        private void DLG_Events_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
         }
     }
 }
