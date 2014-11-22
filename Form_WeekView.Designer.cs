@@ -28,14 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.FBTN_IncrementWeek = new FlashButton.FlashButton();
             this.FBTN_DecrementWeek = new FlashButton.FlashButton();
             this.PN_Frame = new System.Windows.Forms.Panel();
+            this.CM_Event = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.modifierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.effacerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporterDuneSemaineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dupliquerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PN_Scroll = new Compact_Agenda.DoubleBufferPanel();
             this.PN_Content = new Compact_Agenda.DoubleBufferPanel();
             this.PN_Hours = new Compact_Agenda.DoubleBufferPanel();
             this.PN_DaysHeader = new Compact_Agenda.DoubleBufferPanel();
             this.PN_Frame.SuspendLayout();
+            this.CM_Event.SuspendLayout();
             this.PN_Scroll.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,9 +55,10 @@
             this.FBTN_IncrementWeek.ImageDisable = global::Compact_Agenda.Properties.Resources.ICON_Right_Disable;
             this.FBTN_IncrementWeek.ImageNeutral = global::Compact_Agenda.Properties.Resources.ICON_Right_Neutral;
             this.FBTN_IncrementWeek.ImageOver = global::Compact_Agenda.Properties.Resources.ICON_Right_Over;
-            this.FBTN_IncrementWeek.Location = new System.Drawing.Point(708, 2);
+            this.FBTN_IncrementWeek.Location = new System.Drawing.Point(1062, 3);
+            this.FBTN_IncrementWeek.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.FBTN_IncrementWeek.Name = "FBTN_IncrementWeek";
-            this.FBTN_IncrementWeek.Size = new System.Drawing.Size(32, 32);
+            this.FBTN_IncrementWeek.Size = new System.Drawing.Size(48, 49);
             this.FBTN_IncrementWeek.TabIndex = 3;
             this.FBTN_IncrementWeek.Click += new System.EventHandler(this.FBTN_IncrementWeek_Click);
             // 
@@ -62,9 +70,10 @@
             this.FBTN_DecrementWeek.ImageDisable = global::Compact_Agenda.Properties.Resources.ICON_Left_Disable;
             this.FBTN_DecrementWeek.ImageNeutral = global::Compact_Agenda.Properties.Resources.ICON_Left_Neutral;
             this.FBTN_DecrementWeek.ImageOver = global::Compact_Agenda.Properties.Resources.ICON_Left_Over;
-            this.FBTN_DecrementWeek.Location = new System.Drawing.Point(3, 2);
+            this.FBTN_DecrementWeek.Location = new System.Drawing.Point(4, 3);
+            this.FBTN_DecrementWeek.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.FBTN_DecrementWeek.Name = "FBTN_DecrementWeek";
-            this.FBTN_DecrementWeek.Size = new System.Drawing.Size(32, 32);
+            this.FBTN_DecrementWeek.Size = new System.Drawing.Size(48, 49);
             this.FBTN_DecrementWeek.TabIndex = 2;
             this.FBTN_DecrementWeek.Click += new System.EventHandler(this.FBTN_DecrementWeek_Click);
             // 
@@ -79,9 +88,44 @@
             this.PN_Frame.Controls.Add(this.FBTN_IncrementWeek);
             this.PN_Frame.Controls.Add(this.PN_DaysHeader);
             this.PN_Frame.Location = new System.Drawing.Point(0, 0);
+            this.PN_Frame.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PN_Frame.Name = "PN_Frame";
-            this.PN_Frame.Size = new System.Drawing.Size(743, 589);
+            this.PN_Frame.Size = new System.Drawing.Size(1114, 906);
             this.PN_Frame.TabIndex = 4;
+            // 
+            // CM_Event
+            // 
+            this.CM_Event.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.modifierToolStripMenuItem,
+            this.effacerToolStripMenuItem,
+            this.reporterDuneSemaineToolStripMenuItem,
+            this.dupliquerToolStripMenuItem});
+            this.CM_Event.Name = "CM_Event";
+            this.CM_Event.Size = new System.Drawing.Size(273, 124);
+            // 
+            // modifierToolStripMenuItem
+            // 
+            this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
+            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(272, 30);
+            this.modifierToolStripMenuItem.Text = "Modifier...";
+            // 
+            // effacerToolStripMenuItem
+            // 
+            this.effacerToolStripMenuItem.Name = "effacerToolStripMenuItem";
+            this.effacerToolStripMenuItem.Size = new System.Drawing.Size(272, 30);
+            this.effacerToolStripMenuItem.Text = "Effacer...";
+            // 
+            // reporterDuneSemaineToolStripMenuItem
+            // 
+            this.reporterDuneSemaineToolStripMenuItem.Name = "reporterDuneSemaineToolStripMenuItem";
+            this.reporterDuneSemaineToolStripMenuItem.Size = new System.Drawing.Size(272, 30);
+            this.reporterDuneSemaineToolStripMenuItem.Text = "Reporter d\'une semaine";
+            // 
+            // dupliquerToolStripMenuItem
+            // 
+            this.dupliquerToolStripMenuItem.Name = "dupliquerToolStripMenuItem";
+            this.dupliquerToolStripMenuItem.Size = new System.Drawing.Size(272, 30);
+            this.dupliquerToolStripMenuItem.Text = "Dupliquer...";
             // 
             // PN_Scroll
             // 
@@ -92,21 +136,23 @@
             this.PN_Scroll.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.PN_Scroll.Controls.Add(this.PN_Content);
             this.PN_Scroll.Controls.Add(this.PN_Hours);
-            this.PN_Scroll.Location = new System.Drawing.Point(3, 34);
+            this.PN_Scroll.Location = new System.Drawing.Point(4, 52);
             this.PN_Scroll.Margin = new System.Windows.Forms.Padding(0);
             this.PN_Scroll.Name = "PN_Scroll";
-            this.PN_Scroll.Size = new System.Drawing.Size(737, 552);
+            this.PN_Scroll.Size = new System.Drawing.Size(1106, 849);
             this.PN_Scroll.TabIndex = 1;
             this.PN_Scroll.Scroll += new System.Windows.Forms.ScrollEventHandler(this.PN_Scroll_Scroll);
             this.PN_Scroll.Resize += new System.EventHandler(this.PN_Scroll_Resize);
             // 
             // PN_Content
             // 
-            this.PN_Content.Location = new System.Drawing.Point(36, 0);
+            this.PN_Content.Location = new System.Drawing.Point(54, 0);
+            this.PN_Content.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PN_Content.Name = "PN_Content";
-            this.PN_Content.Size = new System.Drawing.Size(628, 522);
+            this.PN_Content.Size = new System.Drawing.Size(942, 803);
             this.PN_Content.TabIndex = 0;
             this.PN_Content.Paint += new System.Windows.Forms.PaintEventHandler(this.PN_Content_Paint);
+            this.PN_Content.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PN_Content_MouseClick);
             this.PN_Content.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PN_Content_MouseDoubleClick);
             this.PN_Content.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PN_Content_MouseDown);
             this.PN_Content.MouseEnter += new System.EventHandler(this.PN_Scroll_MouseEnter);
@@ -117,34 +163,37 @@
             // PN_Hours
             // 
             this.PN_Hours.Location = new System.Drawing.Point(0, 0);
+            this.PN_Hours.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PN_Hours.Name = "PN_Hours";
-            this.PN_Hours.Size = new System.Drawing.Size(36, 518);
+            this.PN_Hours.Size = new System.Drawing.Size(54, 797);
             this.PN_Hours.TabIndex = 1;
             this.PN_Hours.Paint += new System.Windows.Forms.PaintEventHandler(this.PN_Hours_Paint);
             // 
             // PN_DaysHeader
             // 
             this.PN_DaysHeader.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.PN_DaysHeader.Location = new System.Drawing.Point(39, 2);
+            this.PN_DaysHeader.Location = new System.Drawing.Point(58, 3);
             this.PN_DaysHeader.Margin = new System.Windows.Forms.Padding(0);
             this.PN_DaysHeader.Name = "PN_DaysHeader";
-            this.PN_DaysHeader.Size = new System.Drawing.Size(628, 32);
+            this.PN_DaysHeader.Size = new System.Drawing.Size(942, 49);
             this.PN_DaysHeader.TabIndex = 0;
             this.PN_DaysHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.PN_DaysHeader_Paint);
             // 
             // Form_WeekView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(743, 589);
+            this.ClientSize = new System.Drawing.Size(1114, 906);
             this.Controls.Add(this.PN_Frame);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.KeyPreview = true;
-            this.MinimumSize = new System.Drawing.Size(600, 500);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MinimumSize = new System.Drawing.Size(889, 739);
             this.Name = "Form_WeekView";
             this.Text = "Agenda compacte...";
             this.Load += new System.EventHandler(this.Form_WeekView_Load);
             this.PN_Frame.ResumeLayout(false);
+            this.CM_Event.ResumeLayout(false);
             this.PN_Scroll.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -159,6 +208,11 @@
         private FlashButton.FlashButton FBTN_DecrementWeek;
         private FlashButton.FlashButton FBTN_IncrementWeek;
         private System.Windows.Forms.Panel PN_Frame;
+        private System.Windows.Forms.ContextMenuStrip CM_Event;
+        private System.Windows.Forms.ToolStripMenuItem modifierToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem effacerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporterDuneSemaineToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dupliquerToolStripMenuItem;
 
     }
 }

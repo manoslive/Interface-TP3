@@ -32,8 +32,8 @@ namespace Compact_Agenda
         private int minInterval = 5;
         public DateTime CurrentWeek
         {
-            set 
-            { 
+            set
+            {
                 // calculer la date du dimanche de la semaine courante
                 _CurrentWeek = value.AddDays(-(int)value.DayOfWeek);
             }
@@ -60,12 +60,12 @@ namespace Compact_Agenda
         private void PN_Scroll_MouseEnter(Object sender, EventArgs e)
         {
             // pour s'assurer que le mousewheel event sera intercepté
-            
+
             PN_Scroll.Focus();
 
         }
 
-      
+
         private void GetWeekEvents()
         {
             TableEvents tableEvents = new TableEvents(ConnexionString);
@@ -92,7 +92,7 @@ namespace Compact_Agenda
             pen2.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             for (int hour = 0; hour < 24; hour++)
             {
-                DC.DrawLine(pen1, 0, Event.HourToPixel(hour + 1,  0, PN_Hours.Height), PN_Content.Width, Event.HourToPixel(hour + 1,  0, PN_Hours.Height));
+                DC.DrawLine(pen1, 0, Event.HourToPixel(hour + 1, 0, PN_Hours.Height), PN_Content.Width, Event.HourToPixel(hour + 1, 0, PN_Hours.Height));
                 DC.DrawLine(pen2, 0, Event.HourToPixel(hour + 1, 30, PN_Hours.Height), PN_Content.Width, Event.HourToPixel(hour + 1, 30, PN_Hours.Height));
             }
             Point location;
@@ -119,7 +119,7 @@ namespace Compact_Agenda
             string[] dayNames = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.DayNames;//[col].Substring(0, 3).ToUpper();
             Brush brush = new SolidBrush(Color.White);
             Pen pen = new Pen(Color.LightGray, 1);
-            for (int dayNum = 0; dayNum < 7; dayNum++) 
+            for (int dayNum = 0; dayNum < 7; dayNum++)
             {
                 location = new Point((int)Math.Round(PN_DaysHeader.Width / 7f * dayNum), 0);
                 String headerText = dayNames[dayNum];
@@ -129,8 +129,8 @@ namespace Compact_Agenda
                 DC.DrawString(headerDate, PN_DaysHeader.Font, brush, location.X, location.Y + 14);
                 date = date.AddDays(1);
             }
-            location = new Point((int)Math.Round(PN_DaysHeader.Width / 7f * 7), 0); 
-            DC.DrawLine(pen, location.X-1, 0, location.X-1, PN_DaysHeader.Height);
+            location = new Point((int)Math.Round(PN_DaysHeader.Width / 7f * 7), 0);
+            DC.DrawLine(pen, location.X - 1, 0, location.X - 1, PN_DaysHeader.Height);
         }
 
         private void Fill_Hours_Header(Graphics DC)
@@ -140,9 +140,9 @@ namespace Compact_Agenda
             for (int hour = 0; hour <= 24; hour++)
             {
                 Point location = new Point(0, Event.HourToPixel(hour, 0, PN_Hours.Height));
-                String headerText = (hour < 10? "0": "") + hour.ToString() + ":00";
-                DC.DrawString(headerText, PN_DaysHeader.Font, brush, location); 
-                DC.DrawLine(pen, 0,Event.HourToPixel(hour + 1, 0, PN_Hours.Height), PN_Hours.Width, Event.HourToPixel(hour + 1, 0, PN_Hours.Height));
+                String headerText = (hour < 10 ? "0" : "") + hour.ToString() + ":00";
+                DC.DrawString(headerText, PN_DaysHeader.Font, brush, location);
+                DC.DrawLine(pen, 0, Event.HourToPixel(hour + 1, 0, PN_Hours.Height), PN_Hours.Width, Event.HourToPixel(hour + 1, 0, PN_Hours.Height));
             }
         }
 
@@ -179,7 +179,7 @@ namespace Compact_Agenda
 
 
         Point lastMouseLocation;
-        Point firstMouseLocation; 
+        Point firstMouseLocation;
         bool mouseIsDown = false;
         Pen pen = new Pen(Color.Blue, 1);
 
@@ -199,23 +199,33 @@ namespace Compact_Agenda
             else
                 return pixel;
         }
+
+        private void EventContextMenu()
+        {
+            CM_Event.Show(Cursor.Position);
+        }
+
         private void PN_Content_MouseDown(object sender, MouseEventArgs e)
         {
-            mouseIsDown = true;
-            firstMouseLocation = lastMouseLocation = e.Location;
-            if (Events.TargetEvent != null)
+            if (e.Button == MouseButtons.Left)
             {
-                switch (Events.TargetPart)
+                mouseIsDown = true;
+                firstMouseLocation = lastMouseLocation = e.Location;
+
+                if (Events.TargetEvent != null)
                 {
-                    case TargetPart.Top:
-                        firstMouseLocation.Y =
-                        lastMouseLocation.Y = RoundToMinutes(Event.HourToPixel(Events.TargetEvent.Starting.Hour, Events.TargetEvent.Starting.Minute, PN_Content.Height), minInterval);
-                        break;
-                    case TargetPart.Bottom:
-                        firstMouseLocation.Y =
-                        lastMouseLocation.Y = RoundToMinutes(Event.HourToPixel(Events.TargetEvent.Ending.Hour, Events.TargetEvent.Ending.Minute, PN_Content.Height), minInterval);
-                        break;
-                    default:  break;
+                    switch (Events.TargetPart)
+                    {
+                        case TargetPart.Top:
+                            firstMouseLocation.Y =
+                            lastMouseLocation.Y = RoundToMinutes(Event.HourToPixel(Events.TargetEvent.Starting.Hour, Events.TargetEvent.Starting.Minute, PN_Content.Height), minInterval);
+                            break;
+                        case TargetPart.Bottom:
+                            firstMouseLocation.Y =
+                            lastMouseLocation.Y = RoundToMinutes(Event.HourToPixel(Events.TargetEvent.Ending.Hour, Events.TargetEvent.Ending.Minute, PN_Content.Height), minInterval);
+                            break;
+                        default: break;
+                    }
                 }
             }
         }
@@ -264,7 +274,7 @@ namespace Compact_Agenda
             }
         }
 
-        private static DateTime Klone( DateTime x)
+        private static DateTime Klone(DateTime x)
         {
             return new DateTime(x.Year, x.Month, x.Day, x.Hour, x.Minute, 0);
         }
@@ -291,7 +301,7 @@ namespace Compact_Agenda
                                 Events.TargetEvent.Starting = Moving;
                             break;
                         case TargetPart.Bottom:
-                            
+
                             if (Moving < Events.TargetEvent.Starting)
                             {
                                 Events.TargetPart = TargetPart.Top;
@@ -306,10 +316,10 @@ namespace Compact_Agenda
                             Events.TargetEvent.Starting = LocationToDateTime(new Point(e.Location.X, RoundToMinutes(Event.HourToPixel(Events.TargetEvent.Starting.Hour, Events.TargetEvent.Starting.Minute, PN_Content.Height) + deltaY, minInterval)));
                             Events.TargetEvent.Ending = LocationToDateTime(new Point(e.Location.X, RoundToMinutes(Event.HourToPixel(Events.TargetEvent.Ending.Hour, Events.TargetEvent.Ending.Minute, PN_Content.Height) + deltaY, minInterval)));
                             AjustCurrentWeek();
-                            break; 
+                            break;
                         default: break;
                     }
-                    PN_Content.Refresh(); 
+                    PN_Content.Refresh();
                 }
                 else
                 {
@@ -329,7 +339,7 @@ namespace Compact_Agenda
         private DateTime LocationToDateTime(Point location)
         {
             DateTime date = new DateTime(_CurrentWeek.Year, _CurrentWeek.Month, _CurrentWeek.Day);
-            int adjust = (location.X < 0? (int)(PN_Content.Width / 7F) : 0);
+            int adjust = (location.X < 0 ? (int)(PN_Content.Width / 7F) : 0);
             int days = (int)(Math.Truncate((location.X - adjust) / (PN_Content.Width / 7F)));
 
             date = date.AddDays(days);
@@ -338,12 +348,12 @@ namespace Compact_Agenda
             Minutes = Minutes - Hours * 60;
             if (Minutes >= 60)
                 Minutes = 59;
-            return new DateTime(date.Year, date.Month, date.Day, Hours, Minutes, 0); 
+            return new DateTime(date.Year, date.Month, date.Day, Hours, Minutes, 0);
         }
-         
+
         private void ConludeMouseEvent()
         {
-           
+
             if (mouseIsDown)
             {
                 mouseIsDown = false;
@@ -388,7 +398,7 @@ namespace Compact_Agenda
                     TimeSpan delta = Event.Ending.Subtract(Event.Starting);
                     if (delta.Minutes < 30 && delta.Hours == 0)
                     {
-                         Event.Ending = Event.Starting + new TimeSpan(0, 30, 0);
+                        Event.Ending = Event.Starting + new TimeSpan(0, 30, 0);
                     }
                     dlg.Event = Event.Klone();
                     if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -400,7 +410,7 @@ namespace Compact_Agenda
                 GetWeekEvents();
                 PN_Content.Refresh();
             }
-            
+
         }
 
         private void PN_Content_MouseUp(object sender, MouseEventArgs e)
@@ -444,7 +454,7 @@ namespace Compact_Agenda
 
         private void PN_Content_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if ((Events.TargetEvent != null) && (Events.TargetPart == TargetPart.Inside))
+            if ((Events.TargetEvent != null) && (Events.TargetPart == TargetPart.Inside) && (e.Button == MouseButtons.Left))
             {
                 DLG_Events dlg = new DLG_Events();
                 dlg.Event = Events.TargetEvent;
@@ -500,38 +510,38 @@ namespace Compact_Agenda
                     }
                     break;
                 case Keys.Right: // Incrémenter d'une semaine la semaine courrante
-                    if(!mouseIsDown)
+                    if (!mouseIsDown)
                         Increment_Week();
-                   
-                   break;
+
+                    break;
                 case Keys.Up: // Décrémenter d'un mois la semaine courrante
 
                     // Fonction temporaire pour voir comment zommer
-                   if (!mouseIsDown)
-                   {
-                       if (PN_Content.Height < PN_Frame.Height *12)
-                       {
-                           PN_Content.Height += 200;
-                           PN_Hours.Height += 200;
-                           PN_Content.Refresh();
-                           PN_Hours.Refresh();
-                       }
-                   }
-                   break;
+                    if (!mouseIsDown)
+                    {
+                        if (PN_Content.Height < PN_Frame.Height * 12)
+                        {
+                            PN_Content.Height += 200;
+                            PN_Hours.Height += 200;
+                            PN_Content.Refresh();
+                            PN_Hours.Refresh();
+                        }
+                    }
+                    break;
                 case Keys.Left:// Décrémenter d'une semaine la semaine courrante
-                   if (!mouseIsDown)
-                       Decrement_Week();
-                   
-                   break;
+                    if (!mouseIsDown)
+                        Decrement_Week();
 
-                case Keys.Space :
-                   if (!mouseIsDown)
-                       GotoCurrentWeek();
-                   break;
+                    break;
+
+                case Keys.Space:
+                    if (!mouseIsDown)
+                        GotoCurrentWeek();
+                    break;
             }
 
-            
-            
+
+
             bool result = base.ProcessCmdKey(ref msg, keyData);
             PN_Scroll.Focus();
             return result;
@@ -540,6 +550,18 @@ namespace Compact_Agenda
         private void PN_Content_Resize(object sender, EventArgs e)
         {
             AdjustMinInterval();
+        }
+
+        private void PN_Content_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                if (Events.TargetEvent != null)
+                {
+                    EventContextMenu();
+                    PN_Content.Refresh();
+                }
+            }
         }
     }
 }
