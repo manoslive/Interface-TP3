@@ -1,0 +1,7 @@
+C:\Users\Nicolas Chourot\Desktop\PasswordKeeper\FlashButton\bin\Release\FlashButton.dll
+C:\Users\Nicolas Chourot\Desktop\PasswordKeeper\FlashButton\bin\Release\FlashButton.pdb
+C:\Users\Nicolas Chourot\Desktop\PasswordKeeper\FlashButton\obj\Release\FlashButton.FlashButton.resources
+C:\Users\Nicolas Chourot\Desktop\PasswordKeeper\FlashButton\obj\Release\FlashButton.csproj.GenerateResource.Cache
+C:\Users\Nicolas Chourot\Desktop\PasswordKeeper\FlashButton\obj\Release\FlashButton.dll
+C:\Users\Nicolas Chourot\Desktop\PasswordKeeper\FlashButton\obj\Release\FlashButton.pdb
+C:\Users\Nicolas Chourot\Desktop\PasswordKeeper\FlashButton\obj\Release\FlashButton.csprojResolveAssemblyReference.cache
