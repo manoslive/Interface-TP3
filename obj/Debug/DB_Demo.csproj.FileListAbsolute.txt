@@ -34,3 +34,15 @@ C:\Users\Nicolas Chourot\Desktop\Compact Agenda\obj\Debug\Compact_Agenda.Propert
 C:\Users\Nicolas Chourot\Desktop\Compact Agenda\obj\Debug\DB_Demo.csproj.GenerateResource.Cache
 C:\Users\Nicolas Chourot\Desktop\Compact Agenda\obj\Debug\DB_Demo.exe
 C:\Users\Nicolas Chourot\Desktop\Compact Agenda\obj\Debug\DB_Demo.pdb
+C:\Users\Emmanuel\Google Drive\Dev C sharp\Interface-TP3\bin\Debug\DB_Demo.exe.config
+C:\Users\Emmanuel\Google Drive\Dev C sharp\Interface-TP3\obj\Debug\DB_Demo.exe
+C:\Users\Emmanuel\Google Drive\Dev C sharp\Interface-TP3\obj\Debug\DB_Demo.pdb
+C:\Users\Emmanuel\Google Drive\Dev C sharp\Interface-TP3\bin\Debug\DB_Demo.exe
+C:\Users\Emmanuel\Google Drive\Dev C sharp\Interface-TP3\bin\Debug\DB_Demo.pdb
+C:\Users\Emmanuel\Google Drive\Dev C sharp\Interface-TP3\bin\Debug\FlashButton.dll
+C:\Users\Emmanuel\Google Drive\Dev C sharp\Interface-TP3\bin\Debug\FlashButton.pdb
+C:\Users\Emmanuel\Google Drive\Dev C sharp\Interface-TP3\obj\Debug\DB_Demo.csprojResolveAssemblyReference.cache
+C:\Users\Emmanuel\Google Drive\Dev C sharp\Interface-TP3\obj\Debug\Compact_Agenda.DLG_Events.resources
+C:\Users\Emmanuel\Google Drive\Dev C sharp\Interface-TP3\obj\Debug\Compact_Agenda.Form_WeekView.resources
+C:\Users\Emmanuel\Google Drive\Dev C sharp\Interface-TP3\obj\Debug\Compact_Agenda.Properties.Resources.resources
+C:\Users\Emmanuel\Google Drive\Dev C sharp\Interface-TP3\obj\Debug\DB_Demo.csproj.GenerateResource.Cache
